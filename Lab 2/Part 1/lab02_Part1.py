@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import scipy.constants as c
 import numpy as np
+import numpy.polynomial.polynomial as poly
 import scipy as sp
 
-neon_data = np.loadtxt("Ne_calib.dat")
+neon_data = np.loadtxt("Part 1/Ne_calib.dat")
 
 pixels = np.arange(len(neon_data))
 
@@ -84,41 +85,35 @@ true_wavelengths = [540.056,576.441,582.015,585.249,588.189,594.483,597.553,602.
                          653.288,655.895,667.828,671.204,692.947, 703.241,717.394,724.512,743.890,
                          747.244,748.887,753.577,754.404]
 
-
-x_data=np.array(centroids)
-true_wavelenghts_np=np.array(true_wavelengths)
-
-
-
 # Finding the fits
-linear_fit = np.polyfit(x_data,true_wavelengths,1)
-quadratic_fit = np.polyfit(x_data,true_wavelengths,2)
-cubic_fit = np.polyfit(x_data,true_wavelengths,3)
+linear_fit = poly.polyfit(centroids,true_wavelengths,1)
+quadratic_fit = poly.polyfit(centroids,true_wavelengths,2)
+cubic_fit = poly.polyfit(centroids,true_wavelengths,3)
 
 # Calculating Fit for all pixels
-linear_values_all = [np.polyval(linear_fit,x) for x in pixels]
-quad_values_all = [np.polyval(linear_fit,x) for x in pixels]
-cub_values_all = [np.polyval(linear_fit,x) for x in pixels]
+linear_values_all = poly.polyval(pixels,linear_fit)
+quad_values_all = poly.polyval(pixels,quadratic_fit)
+cub_values_all = poly.polyval(pixels,cubic_fit)
 
 # Calculating fit only for centroid points
-linear_values_cen = [np.polyval(linear_fit,x) for x in x_data]
-quad_values_cen = [np.polyval(linear_fit,x) for x in x_data]
-cub_values_cen = [np.polyval(linear_fit,x) for x in x_data]
+linear_values_cen = poly.polyval(centroids,linear_fit)
+quad_values_cen = poly.polyval(centroids,quadratic_fit)
+cub_values_cen = poly.polyval(centroids,cubic_fit)
 
 # # Printing out centroid -> wavelength mapping
 # for i in range(len(centroids)):
 #     print("Identified {i} centroid as wavelength {w} nm".format(i=centroids[i],w=linear_values_cen[i]))
 
 plt.title("Linear Fit")
-plt.scatter(x_data, true_wavelenghts_np)
-plt.plot(pixels,linear_values_all)
+plt.scatter(centroids, true_wavelengths)
+plt.plot(pixels, linear_values_all)
 plt.xlabel("Pixels")
 plt.ylabel("True Wavelength (nm)")
 plt.grid(".-")
 plt.show()
 
 plt.title("Quadratic Fit")
-plt.scatter(x_data, true_wavelenghts_np)
+plt.scatter(centroids, true_wavelengths)
 plt.plot(pixels,quad_values_all)
 plt.xlabel("Pixel Number")
 plt.ylabel("True Wavelength (nm)")
@@ -126,7 +121,7 @@ plt.grid(".-")
 plt.show()
 
 plt.title("Cubic Fit")
-plt.scatter(x_data, true_wavelenghts_np)
+plt.scatter(centroids, true_wavelengths)
 plt.plot(pixels,cub_values_all)
 plt.xlabel("Pixel Number")
 plt.ylabel("True Wavelength (nm)")
@@ -134,21 +129,21 @@ plt.grid(".-")
 plt.show()
 
 # Calculate Residuals
-linear_residuals = true_wavelenghts_np - np.array(linear_values_cen)
-quad_residuals = true_wavelenghts_np - np.array(quad_values_cen)
-cub_residuals = true_wavelenghts_np - np.array(cub_values_cen)
+linear_residuals = np.array(true_wavelengths) - np.array(linear_values_cen)
+quad_residuals = np.array(true_wavelengths) - np.array(quad_values_cen)
+cub_residuals = np.array(true_wavelengths) - np.array(cub_values_cen)
 
 # Plot Residuals
 fig, ax = plt.subplots(3, 1, figsize=(6, 10), sharex=True)
-ax[0].scatter(x_data, linear_residuals, color="red")
+ax[0].scatter(centroids, linear_residuals, color="red")
 ax[0].set_title("Linear Fit Residuals")
 ax[0].set_ylabel("Residuals")
 ax[0].grid(True)
-ax[1].scatter(x_data, quad_residuals, color="teal")
+ax[1].scatter(centroids, quad_residuals, color="teal")
 ax[1].set_title("Quadratic Fit Residuals")
 ax[1].set_ylabel("Residuals")
 ax[1].grid(True)
-ax[2].scatter(x_data, cub_residuals, color="green")
+ax[2].scatter(centroids, cub_residuals, color="green")
 ax[2].set_title("Cubic Fit Residuals")
 ax[2].set_xlabel("Pixel Number")
 ax[2].set_ylabel("Residuals")
@@ -159,7 +154,7 @@ plt.show()
 
 # Blackbody Calculations
 
-bb_data = np.loadtxt("Group_S_BB.dat")
+bb_data = np.loadtxt("Part 1/Group_S_BB.dat")
 pixels = np.arange(len(bb_data))
 
 
