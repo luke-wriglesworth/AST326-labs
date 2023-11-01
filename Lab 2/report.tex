@@ -1,0 +1,325 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{bookmark}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{authblk}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\floatstyle{plain} 
+\restylefloat{figure}
+\title{AST326: Introduction To Spectroscopy}
+\author{Luke Wriglesworth}
+\affil{University of Toronto}
+\date{\today}
+
+\begin{document}
+\maketitle
+% \tableofcontents
+
+\section{Introduction}
+Spectroscopy is an extremely valuable tool for scientists of all disciplines, with it being especially important to astronomers. Spectroscopes split up light into its wavelength components, allowing astronomers
+to gain valuable information about distant targets, such as temperature, velocity, and even the target's molecular structure. Spectrometers record data using
+a CCD, which records individual photon intensities to a 2 dimension numerical matrix. To gain scientific information from this data, wavelength calibration must be 
+performed, which is the process of finding a mathematical function that maps the pixel position of the CCD to the correct wavelength. One way of doing this is with a 
+neon calibration lamp, since the spectral peaks of neon are well known. Another way is to use the prominent OH emission lines in the atmosphere. If the observations are performed
+in the near-infrared spectrum, these lines will be easily visible in the data and can be mapped using the known wavelengths of these lines. The process for finding a 1D and 2D wavelength solution will be outlined
+in this report, using a neon calibration lamp, as well as OH emission lines. These wavelength solutions will be applied to a spectrum of an unknown blackbody, to determine its temperature, as well as a spectrum containing
+ionized iron gas from a supernova explosion to determine the gas's velocity. Lastly, a wavelength solution for the spectra of Jupiter and The Moon will be found to determine their spectra
+
+
+
+\newpage
+\section{Data and Observations}
+
+The data used in this experiment are obtained from three independent sources, with the first two being provided by professor Moon. The first set of data is recorded using a USB4000 spectrometer. 
+The device works by using a grating, which disperses photons before they are recorded onto a 1 dimensional detector in the form of numerical intensity values. The device is configured to be most 
+sensitive to photons in 500-800 nm range, and is equipped with a detector that records the intensity onto a 1024 pixel array. This spectrometer is used to obtain the spectrum of an unknown blackbody, 
+which is displayed in Figure \ref{fig:bb_raw}. The goal with this set of data is to calculate the blackbody's temperature using its spectrum. To aid in calibrating the spectrometer, a spectrum of neon 
+is used along with the known peaks of neon's spectrum. The plots of the blackbody and the neon lamp spectra are both shown in Figure \ref{fig:part1_raw}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/raw_blackbody.pdf}
+    \caption{Raw spectrum of the unknown blackbody}
+    \label{fig:bb_raw}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/neon_calibration_pt1.pdf}
+    \caption{Neon spectrum used for calibration.}
+    \label{fig:neon_raw}
+  \end{subfigure}
+  \caption{Spectra of the unknown blackbody (a), and a neon lamp (b), both obtained using the same USB4000 spectrometer.}
+\label{fig:part1_raw}
+\end{figure}
+
+\begin{wrapfigure}{r}{.35\textwidth}
+  \caption{Dispersed image of ionized iron gas from a supernova explosion.}\label{wrap-fig:1}
+  \vspace{-15pt}
+  \includegraphics[width=.35\textwidth]{plots/near_infrared.png}
+  \label{fig:near_infrared}
+  \vspace{-20pt}
+\end{wrapfigure} 
+
+The second set of data is a dispersed image of ionized iron gas from a supernova explosion. It is obtained using a spectrograph with a 2D detector sensitive to the near-infrared range, meaning that
+OH emission lines are present and easily identifiable in the background. An Fe II 1.644 micron emission is also clearly visible in the upper third region of the image. The goal with this set of data is
+to calculate the velocity of the Fe II emission. The raw data is displayed in Figure \ref{fig:near_infrared}. 
+
+The last set of data was obtained by our lab group on the rooftop of Burton Tower 
+at the University of Toronto. We used a Meade LX200 10 inch telescope on a Sky Watcher CQ350 equatorial 
+mount, equipped with a Skelyak Alpy spectrograph. The spectrograph has a resolution power $\approx \frac{1nm}{pixel}$ and covers the entire visible wavelength range. Although the weather was poor at the time of our observations,
+we managed to obtain spectra of The Moon and Jupiter, which are displayed in Figure \ref{fig:observations_raw}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/moon_raw.png}
+    \caption{The Moon}
+    \label{fig:moon_raw_fit}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/jupiter_raw.png}
+    \caption{Jupiter}
+    \label{fig:jupiter_raw_fit}
+  \end{subfigure}
+  \caption{Raw data from observations of The Moon (a), and Jupiter (b).}
+\label{fig:observations_raw}
+\end{figure}
+
+
+\section{Data Reduction and Methods}
+
+In terms of data reduction, there is not much work to be done with the first set of data, as 1D spectra of the blackbody and neon lamp have already been obtained.
+For the second set of data, 1D spectra were extracted using DS9 over two rectangular regions, which provides the median intensity of the region as a function of pixel position. 
+This allowed the two plots shown in Figure \ref{fig:OH_Spectrums} to be generated. The spectrum in Figure \ref{fig:isolated} can be used for wavelength calibration using the known wavelengths
+of the OH emission lines, and the spectrum in Figure \ref{fig:both} can be used for further analysis of the Fe II emission once a wavelength solution is found. 
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/OH_pixel_intensity.png}
+    \caption{Isolated Spectrum of OH Emission Lines}
+    \label{fig:isolated}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/supernova_pixels.png}
+    \caption{Spectrum including ionized iron gas emission line.}
+    \label{fig:both}
+  \end{subfigure}
+  \caption{The two 1D spectra extracted from the 2D data. Spectrum (a) isolates only the OH emission lines, while 
+  spectrum (b) also includes the Fe II emission}
+\label{fig:OH_Spectrums}
+\end{figure}
+
+The data from our own observations required the most amount of data reduction, as there are many sources of noise present in the images. Before 1D spectra can be extracted and analyzed, this noise must
+be removed, or at least reduced as much as possible. First, not all parts of the detector in the spectrometer detect photons perfectly evenly. One part of the detector may have a higher baseline level of detection than another, 
+so this must be corrected for. To deal with this, we took a number of flat field images where the detector was uniformly illuminated to be used to process our data. Second, there is noise from the bias voltage required
+to transfer electrons in the detector, as well as electrons from the detector itself that get detected that must be removed. To account for this we also took a number of dark images with the detector isolated in a dark 
+environment to process our image. To produce the final image I first median combined the flats and darks to create a master flat and dark, and used the following formula to process the final image. 
+
+\begin{displaymath}
+  FinalImage = \frac{ScienceImage - MasterDark}{MasterFlat - MasterDark}
+\end{displaymath}
+
+After the noise is reduced, the data is processed in the same way as the second set of data. The extra 1D spectra are displayed in Figure \ref{fig:part1_raw}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/obs_moon_pixels.pdf}
+    \caption{Raw spectrum of The Moon}
+    \label{fig:moon_1D}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/obs_jupiter_pixels.pdf}
+    \caption{Raw spectrum of Jupiter}
+    \label{fig:jupiter_1D}
+  \end{subfigure}
+  \caption{1D spectra extracted from the observed data.}
+\label{fig:part1_raw}
+\end{figure}
+
+\section{Data Analysis and Modeling}
+
+\subsection{Least Squares Fitting Background Information}
+
+In order to get meaningful information from these plots, a wavelength solution must first be obtained, as the subject's intensity is currently only known 
+as a function of pixel position. In other words, we need a function $f(x) = \lambda$, where $x$ is the pixel position and $\lambda$ is the true wavelength. One way 
+to do this is to use the least squares method of polynomial fitting. We first assume that the function that relates pixel position and wavelength to be a polynomial of the form:
+
+\begin{equation}
+  \label{eq:1}
+  f(x) = a_0 + a_1x + a_2x^2 + \ldots + a_nx^n
+\end{equation}
+
+And then also insist on the additional condition that the sum of the squares of the residuals be minimized:
+\begin{align*}
+\frac{\partial}{\partial a_0} \sum_{i=1}^{m} [y_i - f(x_i)]^2 &= 0, \\
+\frac{\partial}{\partial a_1} \sum_{i=1}^{m} [y_i - f(x_i)]^2 &= 0, \\
+&\vdots \\
+\frac{\partial}{\partial a_n} \sum_{i=1}^{m} [y_i - f(x_i)]^2 &= 0,
+\end{align*}
+\noindent
+where $m$ is the number of data points, $y_i$ are the true wavelengths, and $f(x_i)$ are the predicted wavelengths given by the polynomial. 
+
+
+\subsection{Peak Finding and Centroid Calculation}
+
+First, peaks in each data set that correspond to known wavelengths were picked out by hand, and then matched using SciPy's \textit{find\textunderscore peaks()} function. An 
+example of this process can be seen in Figure \ref{fig:oh_peaks}. The plots for the other two data sets can be viewed in Appendix \ref{app:peaks}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.65\linewidth]{plots/OH_Peaks.pdf}
+  \caption{Known peaks that correspond to OH emission lines.}
+  \label{fig:oh_peaks}
+\end{figure}
+
+As the peaks returned by \textit{find\textunderscore peaks()} may not be completely accurate, the centroids of these peaks were calculated using the following formula, 
+where $x_{cent}$ is the centroid $x$ position, $x_i$ are the x values, and $I_i$ is the intensity at $x_i$:
+
+\begin{equation}
+  \label{eq:2}
+  x_{cent} = \frac{\sum x_i I_i}{\sum I_i}
+\end{equation}
+
+To use this formula, appropriate values for $x_i$ need to be determined. This is done through trial and error, by trying to find an appropriate
+boundary around the peak that encloses the peak without overlapping into other peaks. An example of this process can be seen being applied to the 
+OH emission lines in Figure \ref{fig:oh_boundary}, the plots for the other two data sets can be viewed in Appendix \ref{app:centroids}. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.65\linewidth]{plots/OH_Centroid_Boundaries.pdf}
+  \caption{Centroid boundary ranges for the OH emission lines.}
+  \label{fig:oh_boundary}
+\end{figure}
+
+Next the centroids can be calculated using Equation \ref{eq:2}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.65\linewidth]{plots/OH_Centroids_Residuals.pdf}
+  \caption{Centroids calculated for the OH emission peaks and their residuals}
+\end{figure}
+
+\subsection{Wavelength Solution}
+Now we are ready to find the wavelength solutions for each spectra. To do this I used Numpy's \textit{polyval()} function, with polynomials of degrees 1, 2, and 3.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.65\linewidth]{plots/OH_Sol_Comparison.pdf}
+  \caption{Possible wavelength solutions for the OH emission lines}
+  \label{fig:oh_solutions}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.75\linewidth]{plots/OH_Coef_Uncerctainty.pdf}
+  \caption{Uncertainties of the coefficients for each solution. The square root of the diagonals of the covariant matrix}
+  \label{fig:oh_coef}
+\end{figure}
+
+With so few data points to go by, it is tough to determine the proper fit that best fits each data point without overfitting. As shown in Figure \ref{fig:oh_solutions}, 
+the linear solution best generalizes the data, but since we are specifically interested in making calculations around the 180 pixel range, we should be a little more precise. 
+For that reason, it was decided that the quadratic solution would be the best fit, as the root-mean-square error of the residuals was only larger than the cubic solution by a factor
+of around 1.27. 
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.75\linewidth]{plots/OH_Quadratic.pdf}
+  \caption{Quadratic wavelength solution for the OH emission lines}
+  \label{fig:oh_quad}
+\end{figure}
+
+The uncertainties of the coefficients of the polynomials for each fit are also calculated and displayed in figure \ref{fig:oh_coef}. A large jump in uncertainty is observed
+with the cubic polynomial without a proportional decrease in RMS error in the residuals.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.45\linewidth]{plots/OH_Sol_Residuals.pdf}
+  \caption{Quadratic wavelength solution residuals}
+  \label{fig:oh_res}
+\end{figure}
+
+The residuals for each solution were also plotted in \ref{fig:oh_res}. The quadratic solution and cubic solution share
+the same pattern, indicating that higher degree solutions are most likely only fitting underlying noise in the data and should therefore be avoided. By 
+following the same set of logic, solutions for the USB4000 and Skelyak Alpy spectrometer data sets were also determined. It is found that both of them can best
+be modelled as a linear distribution. The analogues to the other data sets for Figures \ref{fig:oh_solutions}, \ref{fig:oh_coef}, \ref{fig:oh_quad}, and \ref{fig:oh_res} can be viewed in Appendix \ref{app:solutions}.
+
+\section{Discussion}
+\subsection*{Blackbody Conclusions}
+Now that we have wavelength solutions for all three data sets, we are able to apply them and gain some information about the subjects in question. In the case of the blackbody measured using the USB4000 spectrometer,
+we can find its peak wavelength, and use it to determine the blackbody's temperature. The blackbody's wavelength solution can be seen in figure \ref{fig:bb_solution}, its peak wavelength was determined to be $\approx$
+
+\subsection*{FeII Emission Conclusions}
+
+\subsection{Observed Data Conclusions}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{plots/blackbody_solution.pdf}
+  \caption{Linear wavelength solution applied to the blackbody}
+  \label{fig:bb_solution}
+\end{figure}
+
+\appendix
+
+\section{Additional Plots of Identified Peaks}
+\label{app:peaks}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{plots/neon_peaks.pdf}
+  \caption{Identified peaks in the neon spectrum obtained using the USB4000 spectrometer that correspond to known wavelengths.}
+  \label{fig:neon_peaks}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{plots/OH_Peaks.pdf}
+  \caption{Known peaks in the neon spectrum obtained using the Skelyak Alpy spectrograph that correspond to known wavelengths.}
+  \label{fig:obs_peaks}
+\end{figure}
+
+\section{Additional Plots of Centroid Boundary Ranges}
+\label{app:centroids}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{plots/neon_boundaries.pdf}
+  \caption{Centroid boundary ranges for the USB4000 spectrometer}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{plots/obs_boundaries.pdf}
+  \caption{Centroid boundary ranges for the Skelyak Alpy spectrograph}
+\end{figure}
+
+\section{Additional Centroid Plots}
+
+\section{Additional Wavelength Solutions}
+\label{app:solutions}
+
+\section{}
+
+\end{document}

@@ -1,0 +1,1 @@
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QIsolated Spectrum Spectrum with ionized iron emission The two spectrums extracted from the 2D Data\\E$"}

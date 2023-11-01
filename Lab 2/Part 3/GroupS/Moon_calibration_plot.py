@@ -1,16 +1,16 @@
 # Imports 
 import numpy as np
-import numpy.polynomial.polynomial as poly
-from numpy.polynomial.polynomial import Polynomial
+from numpy import polyfit
+from numpy import poly1d
 import scipy as sp
 import scipy.constants as c
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
 # Loading Neon Sample
-projection = np.loadtxt("Part 3/GroupS/processed_fits/neon_spectrum.dat")
+projection = np.loadtxt("Lab 2/Part 3/GroupS/processed_fits/neon_spectrum.dat")
 
-# DS9 Y Pixel Ranges
+# Pixel Ranges
 xmin = 0
 xmax = 1392
 
@@ -21,7 +21,7 @@ moon_pixels = np.arange(xmin,xmax)
 intensities = projection[:,1]
 
 # moon Spectrum
-moon = np.loadtxt("Part 3/GroupS/processed_fits/moon_spectrum.dat")
+moon = np.loadtxt("Lab 2/Part 3/GroupS/processed_fits/moon_spectrum.dat")
 moon_intensities = moon[:,1] + abs(np.min(moon[:,1]))
 
 plt.rcParams["figure.figsize"] = (10,6)
@@ -36,6 +36,7 @@ plt.xlabel("Pixel Position (X Axis)")
 plt.ylabel("Intensity")
 plt.grid()
 plt.legend(loc = 'best', fontsize = f)
+plt.savefig("Lab 2/plots/neon_peaks.png")
 plt.show()
 
 # Peak Finding 
@@ -91,7 +92,7 @@ ax0 = plt.subplot(gs[0])
 ax0.set_xlim(1100,np.max(pixels))
 ax0.set_title("Peak Centroids")
 ax1 = plt.subplot(gs[1], sharex = ax0)
-ax1.set_ylim(-0.5,0.5)
+ax1.set_ylim(-1,1)
 ax0.plot(pixels, intensities, color = 'purple', label = 'Intensity')
 ax0.plot(pixels[peaks], intensities[peaks], color = 'coral', ls = '', marker = 'x',
          ms = 5, label = 'Peaks')
@@ -116,12 +117,12 @@ known_lines = [420.067,585.249,692.947,
 
 
 # Finding the fits 
-linear_fit, linear_stats = poly.polyfit(centroids,known_lines,1,full=True)
-lin = Polynomial(linear_fit)
-quadratic_fit, quad_stats = poly.polyfit(centroids,known_lines,2,full=True)
-quad = Polynomial(quadratic_fit)
-cubic_fit, cub_stats = poly.polyfit(centroids,known_lines,3,full=True)
-cub=Polynomial(cubic_fit)
+linear_fit, linear_cov = polyfit(centroids,known_lines,1,full=False, cov=True)
+lin = poly1d(linear_fit)
+quadratic_fit, quad_cov = polyfit(centroids,known_lines,2,full=False, cov=True)
+quad = poly1d(quadratic_fit)
+cubic_fit, cub_cov = polyfit(centroids,known_lines,3,full=False, cov=True)
+cub=poly1d(cubic_fit)
 
 # Calculating Fit for all pixels
 linear_values_all = lin(pixels)
@@ -129,9 +130,9 @@ quad_values_all = quad(pixels)
 cub_values_all = cub(pixels)
 
 # Calculating fit only for centroid point
-linear_values_cen = poly.polyval(centroids,linear_fit)
-quad_values_cen = poly.polyval(centroids,quadratic_fit)
-cub_values_cen = poly.polyval(centroids,cubic_fit)
+linear_values_cen = lin(centroids)
+quad_values_cen = quad(centroids)
+cub_values_cen = cub(centroids)
 values=[linear_values_all,quad_values_all,cub_values_all]
 
 # Calculate Residuals
@@ -139,6 +140,45 @@ linear_residuals = np.array(known_lines) - np.array(linear_values_cen)
 quad_residuals = np.array(known_lines) - np.array(quad_values_cen)
 cub_residuals = np.array(known_lines) - np.array(cub_values_cen)
 residuals=[linear_residuals,quad_residuals,cub_residuals]
+
+# root mean square for residuals
+rmse = []
+for res in residuals:
+    rmse.append(np.sqrt(np.mean(res**2)))
+
+# Calculate Uncertainty For Coefficients
+linear_uncertainty = np.sqrt(np.diag(linear_cov))
+quad_uncertainty = np.sqrt(np.diag(quad_cov))
+cub_uncertainty = np.sqrt(np.diag(cub_cov))
+uncertainty_coefficients = [linear_uncertainty,quad_uncertainty,cub_uncertainty]
+
+
+print("Uncertainty of Coefficients")
+print("----------")
+for u in uncertainty_coefficients:
+    print(u)
+
+linear_coef_names = ['m', 'b']
+quad_coef_names = ['a', 'b', 'c']
+cub_coef_names = ['a', 'b', 'c', 'd']
+coef_names = [linear_coef_names, quad_coef_names, cub_coef_names]
+fit_names = ['Linear', 'Quadratic', 'Cubic']
+fig, ax = plt.subplots()
+
+current_x = 0
+for i, uncertainty in enumerate(uncertainty_coefficients):
+    x_values = [f"{fit_names[i]} {coef_names[i][j]}" for j in range(len(uncertainty))]
+    ax.bar(x_values, uncertainty, width=0.3, label="{f}".format(f=fit_names[i]))
+    current_x += len(uncertainty)
+    if i < len(uncertainty_coefficients) - 1:
+        ax.axvline(current_x - 0.5, color='r', linestyle='-')  # subtract 0.5 to position the line between fits
+ax.set_xlabel('Fit')
+ax.set_ylabel('Uncertainty')
+ax.set_title('Uncertainties of Polynomial Coefficients for Each Fit')
+plt.xticks(rotation=90)
+plt.grid(".-")
+plt.legend()
+plt.show()
 
 # R^2 Values
 print("R^2 Values")
@@ -153,7 +193,7 @@ for val in range(0,len(values)):
 
 plt.suptitle("Linear Fit")
 plt.title("$R^2 = ${r}".format(r=r_array[0]),fontsize=f+3)
-plt.scatter(centroids, known_lines, label="Centroid Wavelength Mapping", color="red")
+plt.errorbar(centroids, known_lines, yerr=rmse[0], fmt='o', label="Centroid Wavelength Mapping \n RMS Error {r}".format(r=rmse[0]), color="red")
 plt.plot(pixels,lin(pixels))
 plt.xlabel("Pixel Position (X Axis)")
 plt.ylabel("True Wavelength (nm)")
@@ -163,7 +203,7 @@ plt.show()
 
 plt.suptitle("Quadratic Fit")
 plt.title("$R^2 = ${r}".format(r=r_array[1]),fontsize=f+3)
-plt.scatter(centroids, known_lines, label="Centroid Wavelength Mapping", color="red")
+plt.errorbar(centroids, known_lines, yerr=rmse[1], fmt='o', label="Centroid Wavelength Mapping \n RMS Error {r}".format(r=rmse[1]), color="red")
 plt.plot(pixels,quad(pixels))
 plt.xlabel("Pixel Position (X Axis)")
 plt.ylabel("True Wavelength (nm)")
@@ -173,12 +213,25 @@ plt.show()
 
 plt.suptitle("Cubic Fit")
 plt.title("$R^2 = ${r}".format(r=r_array[2]),fontsize=f+3)
-plt.scatter(centroids, known_lines, label="Centroid Wavelength Mapping", color="red")
+plt.errorbar(centroids, known_lines, yerr=rmse[2], fmt='o', label="Centroid Wavelength Mapping \n RMS Error {r}".format(r=rmse[2]), color="red")
 plt.plot(pixels,cub(pixels))
 plt.xlabel("Pixel Position (X Axis)")
 plt.ylabel("True Wavelength (nm)")
 plt.grid(".-")
 plt.legend(loc = 'best', fontsize = f)
+plt.show()
+
+# All fits plotted and extended to check for overfititng
+pixels_extended = np.arange(xmin-len(pixels),xmax+len(pixels))
+plt.title("All Fits Compared")
+plt.plot(pixels_extended,lin(pixels_extended), color="orange", label="Linear: RMS Error {r}".format(r=np.round(rmse[0],2)) ,alpha=0.5, ls="--")
+plt.plot(pixels_extended,quad(pixels_extended), color="blue", label="Quadratic: RMS Error {r}".format(r=np.round(rmse[1],2)), alpha=0.5, ls="--")
+plt.plot(pixels_extended,cub(pixels_extended), color="green", label="Cubic: RMS Error {r}".format(r=np.round(rmse[2],2)), alpha=0.5, ls="--")
+plt.scatter(centroids,known_lines, color="red", label="Centroid Wavelength Mapping")
+plt.xlabel("Pixel Position (Y Axis)")
+plt.ylabel("True Wavelength")
+plt.grid(".-")
+plt.legend(loc="best",fontsize=f)
 plt.show()
 
 plt.title("Neon Lamp Wavelengths")
@@ -214,13 +267,26 @@ plt.tight_layout()
 plt.subplots_adjust(top=0.95)  
 plt.show()
 
+# Plotting moon pixels
+plt.figure(figsize=(12,6))
+plt.title("Spectrum of The Moon")
+plt.plot(pixels,moon_intensities,color="teal", label="Intensity")
+plt.xlim(1,xmax)
+plt.xlabel("Pixels")
+plt.ylabel("Intensity")
+plt.grid()
+plt.legend(loc = 'best', fontsize = f)
+plt.savefig("Lab 2/plots/obs_moon_pixels.pdf")
+plt.show()
+
 # Plotting moon
 plt.figure(figsize=(12,6))
-plt.title("Moon Spectrum")
+plt.title("The Moon Wavelength Solution")
 plt.plot(lin(pixels),moon_intensities,color="teal", label="Intensity")
 plt.xlim(300,lin(xmax))
 plt.xlabel("Wavelength (nm)")
 plt.ylabel("Intensity")
 plt.grid()
 plt.legend(loc = 'best', fontsize = f)
+plt.savefig("Lab 2/plots/obs_moon_spectrum.pdf")
 plt.show()
