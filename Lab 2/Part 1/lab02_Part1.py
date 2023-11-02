@@ -300,9 +300,14 @@ peak_derivative = derivative(np.argmax(bb_data))
 # df/dx for centroid placement is 1.73 Kelvin / 1 pixel, based on running the program many times
 # uncertainty for centroid placement is RMS error
 
-# df/dx for polynomial is the derivative of the polynomial 
+# df/dx for polynomial is the derivative of the polynomial at peak
 # uncertainty is RMS error of residuals 
 
+
+print("RMSE Centroid: ", rmse_centroid)
+print("df/dx", 1.73)
+print("RMSE Fitting: ", rmse[0])
+print("df/dy", peak_derivative)
 propogated_error = np.sqrt((1.73)**2*rmse_centroid + (peak_derivative)**2*rmse[0])
 print("Propogated Error is {e} Kelvin".format(e=propogated_error))
 

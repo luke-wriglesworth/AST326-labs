@@ -78,6 +78,7 @@ def centroid(x, I):
 range_value = 3
 right_line_points = [pixels[peaks[i]]+range_value for i in range(len(peaks))]
 left_line_points = [pixels[peaks[i]]-range_value for i in range(len(peaks))]
+
 # Plotting Centroid Bounds
 plt.title("Centroid Boundary Ranges")
 plt.xlabel("Pixel Position (Y Axis)")
@@ -94,7 +95,7 @@ plt.show()
 
 # Calculate Centroids
 centroids = [centroid(pixels[peaks[i]-range_value:peaks[i]+range_value], intensities[peaks[i]-range_value:peaks[i]+range_value]) for i in range(len(peaks))]
-centroid_residuals = np.array(centroids) - np.array(peaks)
+centroid_residuals = np.array(centroids) - np.array(pixels[peaks])
 
 # root mean square error for centroids
 rmse_centroid = np.sqrt(np.mean(centroid_residuals**2))
@@ -333,7 +334,7 @@ plt.show()
 
 # Calculate Centroids
 peak_centroid = [centroid(emission_pixels[emission_peak[i]-range_value:emission_peak[i]+range_value], emission_intensities[emission_peak[i]-range_value:emission_peak[i]+range_value]) for i in range(len(emission_peak))]
-rmse_peak = np.sqrt(np.mean(peak_centroid[0]**2))
+
 
 # Find wavelength of FE2 Emission
 observed_wavelength = quad(peak_centroid[0])
@@ -380,6 +381,8 @@ ax0.set_title("Centroid Wavelength")
 plt.savefig("Lab 2/plots/supernova_cen_wavelength.pdf")
 plt.show()
 
+rmse_peak = np.sqrt(np.mean((emission_pixels[emission_peak] - peak_centroid)**2))
+
 # Error Propogation 
 # Sources of error are initial centroid placement, polynomial fitting, and peak wavelength centroid placement
 
@@ -387,12 +390,20 @@ plt.show()
 # unit pixel. 
 derivative = polyder(quad)
 peak_derivative = derivative(peak_centroid[0])
-propogated_error = np.sqrt((44.15)**2*rmse_centroid+(peak_derivative)**2*rmse[1]+(43.808)**2*rmse_peak)
+propogated_error = np.sqrt((44.15)**2*rmse_centroid+(peak_derivative)**2*rmse[1]+(43.81)**2*rmse_peak)
+
+print("Initial centroid rmse ", rmse_centroid)
+print("df/dx", 44.15)
+print("df/dy", peak_derivative)
+print("rmse solution", rmse[1])
+print("peak centroid rmse ", rmse_peak)
+print("df/dz", 43.81)
 
 # Calculating Velocity of Emission Using Doppler Shift Formula
 intrensic_wavelength = 1.6439981 # microns
 intrensic_wavelength_angstroms = intrensic_wavelength*1e4 # angstroms
 velocity = c.c * (observed_wavelength-intrensic_wavelength_angstroms)/intrensic_wavelength_angstroms
-
 print("Propogated Error is {p} km/s".format(p=propogated_error))
+print(velocity)
+
 print("Velocity of FE2 Emission is {v} km/s".format(v=velocity*1e-3))

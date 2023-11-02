@@ -31,13 +31,12 @@
 
 \section{Introduction}
 Spectroscopy is an extremely valuable tool for scientists of all disciplines, with it being especially important to astronomers. Spectroscopes split up light into its wavelength components, allowing astronomers
-to gain valuable information about distant targets, such as temperature, velocity, and even the target's molecular structure. Spectrometers record data using
+to gain valuable information about distant targets, such as temperature, velocity, and the target's molecular structure. Spectrometers record data using
 a CCD, which records individual photon intensities to a 2 dimension numerical matrix. To gain scientific information from this data, wavelength calibration must be 
-performed, which is the process of finding a mathematical function that maps the pixel position of the CCD to the correct wavelength. One way of doing this is with a 
-neon calibration lamp, since the spectral peaks of neon are well known. Another way is to use the prominent OH emission lines in the atmosphere. If the observations are performed
-in the near-infrared spectrum, these lines will be easily visible in the data and can be mapped using the known wavelengths of these lines. The process for finding a 1D and 2D wavelength solution will be outlined
+performed, which is the process of finding a mathematical function that maps the pixel position of the CCD to the corresponding wavelength. One way of doing this is with a 
+neon calibration lamp, since the spectral peaks of neon are well known. Another way is to use the OH emission lines in the atmosphere which are prominent in the near-infrared range. The process for finding a 1D and 2D wavelength solution will be outlined
 in this report, using a neon calibration lamp, as well as OH emission lines. These wavelength solutions will be applied to a spectrum of an unknown blackbody, to determine its temperature, as well as a spectrum containing
-ionized iron gas from a supernova explosion to determine the gas's velocity. Lastly, a wavelength solution for the spectra of Jupiter and The Moon will be found to determine their spectra
+ionized iron gas from a supernova explosion to determine the gas's velocity. Lastly, a wavelength solution for the spectra of Jupiter and The Moon will be found.
 
 
 
@@ -270,13 +269,10 @@ following the same set of logic, solutions for the USB4000 and Skelyak Alpy spec
 be modelled as a linear distribution. The analogues to the other data sets for Figures \ref{fig:oh_solutions}, \ref{fig:oh_coef}, \ref{fig:oh_quad}, and \ref{fig:oh_res} can be viewed in Appendix \ref{app:solutions}.
 
 \section{Discussion}
-\subsection*{Blackbody Conclusions}
+\subsection*{Blackbody Temperature}
 Now that we have wavelength solutions for all three data sets, we are able to apply them and gain some information about the subjects in question. In the case of the blackbody measured using the USB4000 spectrometer,
-we can find its peak wavelength, and use it to determine the blackbody's temperature. The blackbody's wavelength solution can be seen in figure \ref{fig:bb_solution}, its peak wavelength was determined to be $\approx$
-
-\subsection*{FeII Emission Conclusions}
-
-\subsection{Observed Data Conclusions}
+we can find its peak wavelength, and use it to determine the blackbody's temperature. The blackbody's wavelength solution can be seen in figure \ref{fig:bb_solution}, its peak wavelength was determined to be $\approx$ 628.42 nm. Using 
+this information we can calculate the blackbody's temperature using Wien's Law, where $T$ is the objects temperature at wavelength $\lambda_{peak}$ and $b$ is a constant of proportionality $\approx 2.897 m\dot K$.
 
 \begin{figure}[H]
   \centering
@@ -284,6 +280,111 @@ we can find its peak wavelength, and use it to determine the blackbody's tempera
   \caption{Linear wavelength solution applied to the blackbody}
   \label{fig:bb_solution}
 \end{figure}
+
+
+
+\begin{equation}
+  T = \frac{b}{\lambda_{peak}} \\
+\end{equation}
+
+The following calculations were all done in Python, using SciPy's constants library to ensure the highest degree of accuracy. All significant figures were kept as well until the end, which is not the case in the following demonstration calculations:
+\begin{equation}
+  T \approx \frac{2.897 m K}{628.42 \times 10^{-9}}
+\end{equation}
+
+\begin{equation}
+  T \approx 4611.140 K 
+\end{equation}
+
+\subsection{FeII Emission Velocity}
+
+By applying the wavelength solution to the spectrum containing the FeII emission, we are able to use the concept of doppler shift 
+to find the emission's velocity. The following formula will be used, where $\lambda_{obs}$ is the observed wavelength of the light, $\lambda_i$ is the intrensic
+wavelength of the light, $c$ is the speed of light in $\frac{m}{s}$, and $v$ is the velocity of the object emitting the light:
+
+\begin{equation}
+  \label{eq:doppler}
+  v = c\frac{\lambda_{obs} - \lambda_i}{\lambda_i}
+\end{equation}
+
+First, the peak and centroid pixel position of the FeII emission was found to be at pixel location 181, which the quadratic wavelength solution mapped to a peak wavelength of $16510.8916965 \AA$. It is also known that FeII has an 
+intrinsic wavelength of $1.6439981 \mu m$, or $1.6439981 \times 10^4 \AA$. These two values are enough to calculate the FeII emission's velocity using Equation \ref{eq:doppler}. 
+
+\begin{displaymath}
+  v = c\frac{(16510.8916965 - 1.6439981)\AA}{1.6439981 \AA} = 1293097.1168075642 m/s \approx 1293.1 km/s
+\end{displaymath}
+
+\subsection*{Error Propagation}
+In the first set of data, there are two important sources of error that may influence the results of the experiment. The first source of error comes from the placement of the centroids
+in the wavelength solution, and the second comes from centroid placement when calculating the peak wavelength for the temperature calculation. In order to quantify this, I use the following 
+standard error propagation formula:
+
+\begin{equation}
+  s_f = \sqrt{(\frac{\partial f}{\partial x})^2 s_x + (\frac{\partial f}{\partial y})^2 s_y + (\frac{\partial f}{\partial z})^2 s_z + \dots}
+\end{equation} 
+
+
+Here, $s_f$ is the final RMS error in the answer, $s_x$, $s_y$, and $s_z$ are the RMS errors in each of the individual calculations, and I take each partial derivative to represent the change in $f$ with respect to the 
+independent variables $x$, $y$, and $z$. For example, in the centroid placement for the initial wavelength calibration in data set 1, it was determined by running the full program many times that the final temperature changes approximately 1.73 Kelvin when 
+the x position is changed by 1 pixel. So \dots 
+\begin{equation}
+  \frac{\partial f}{\partial x} \approx \frac{1.73}{1 pixel}
+\end{equation}
+
+For the calculations regarding the polynomial fitting, $\frac{\partial f}{\partial y}$ was calculated using the analytic derivative of the polynomial evaluated at the pixel position of the 
+peak wavelength. And $s_y$ is the RMS error of the linear solution residuals. A summary of all the relevant data used for the error calculations can be viewed in Table \ref{tab:q1_errors}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}
+  \hline
+  Initial centroid placement RMS Error &  0.31 \\ \hline
+  $\frac{\partial f}{\partial x}$ for initial centroid placement & 1.73 \\ \hline
+  Linear solution RMS error in residuals & 0.88 \\ \hline
+  $\frac{\partial f(x_{peak})}{\partial y}$ for linear solution & 0.24 \\ \hline
+  \end{tabular}
+  \caption{Summary of the relevant variables for error propagation in the USB4000 spectrometer data set}
+  \label{tab:q1_errors}
+\end{table}
+
+
+Now an estimate of the final RMS error is calculated:
+
+\begin{equation}
+  s_f \approx \sqrt{(1.73)^2(0.31) + (\frac{\partial f(x_{peak})}{\partial y})^2(0.89)} \approx 0.98 K
+\end{equation}
+
+Therefore, the RMS error on the final temperature calculation is approximated to be around 1 Kelvin.
+
+In the case of the velocity calculations for the FeII emission, the peak centroid for the FeII emission was also calculated and must be included as a third variable in the error propagation formula. All the relevant data used
+for the calculations is displayed in Table \ref{tab:q2_errors}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}
+  \hline
+  Initial centroid placement RMS Error &  0.31 \\ \hline
+  $\frac{\partial f}{\partial x}$ for initial centroid placement & 44.15 \\ \hline
+  Quadratic solution RMS error in residuals & 6.48 \\ \hline
+  $\frac{\partial f(x_{peak})}{\partial y}$ for quadratic solution & 2.41 \\ \hline
+  FeII emission RMS error for centroid placement & 0.23 \\ \hline
+  $\frac{\partial f}{\partial z}$ for centroid placement & 43.81 \\ \hline
+  \end{tabular}
+  \caption{Summary of the relevant variables for error propagation in the OH emission lines data set}
+  \label{tab:q2_errors}
+\end{table}
+
+With this information, an estimate for the final RMS error can be calculated for the velocity of the FeII emission:
+\begin{equation}
+    s_f \approx \sqrt{(\frac{44.15 km/s}{pixel})^2(0.31) + (2.41)^2(6.48) + (\frac{43.81 km/s}{pixel})^2 (0.23)} \approx 32.85 \frac{km}{s}
+\end{equation}
+
+
+\subsection*{FeII Emission Conclusions}
+
+\subsection{Observed Data Conclusions}
+
+
 
 \appendix
 
