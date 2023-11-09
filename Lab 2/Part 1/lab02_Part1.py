@@ -176,6 +176,7 @@ ax.set_title("Polynomial Coefficient Uncertainties")
 plt.xticks(rotation=90)
 plt.grid(".-")
 plt.legend(loc='best', fontsize=f)
+fig.savefig("Lab 2/plots/neon_coef_uncertainty.pdf")
 plt.show()
 
 # R^2 Values
@@ -294,7 +295,7 @@ peak_derivative = derivative(np.argmax(bb_data))
 # Errors to propogate
 # 1. Centroid placement
 # 2. Polynomial Fitting
-# 3. Wien's law has no uncertainty since the peak wavelength is from an ideal blackbody which we know
+# 3. Wien's law has no uncertainty since the peak wavelength is from an ideal blackbody which can be known
 # exactly. 
 
 # df/dx for centroid placement is 1.73 Kelvin / 1 pixel, based on running the program many times
@@ -308,7 +309,7 @@ print("RMSE Centroid: ", rmse_centroid)
 print("df/dx", 1.73)
 print("RMSE Fitting: ", rmse[0])
 print("df/dy", peak_derivative)
-propogated_error = np.sqrt((1.73)**2*rmse_centroid + (peak_derivative)**2*rmse[0])
+propogated_error = np.sqrt((1.      )**2*rmse_centroid + (peak_derivative)**2*rmse[0])
 print("Propogated Error is {e} Kelvin".format(e=propogated_error))
 
 # Now using Wien's displacement law to find temperature

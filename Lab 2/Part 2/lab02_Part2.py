@@ -54,14 +54,14 @@ plt.rcParams['font.size'] = 16
 plt.rcParams['xtick.labelsize'] = 12
 plt.rcParams['ytick.labelsize'] = 12
 
-plt.title("Spectral Projection In One Dimension With Visible OH Skylines \n And {n} Identified Peaks".format(n=len(peaks)))
+plt.title("{n} Identified Peaks".format(n=len(peaks)))
 plt.xlabel("Pixel Position (Y Axis)")
 plt.ylabel("Relative")
 plt.plot(pixels,intensities,label="Intensity")
 plt.plot(pixels[peaks],intensities[peaks], ls='', marker="x", color="red", label="Identified Peak")
 for i, peak in enumerate(peaks):
     #if i % 2 == 0:
-    plt.annotate(str(known_lines[i])+" nm", (pixels[peak], intensities[peak]), 
+    plt.annotate(str(known_lines[i])+" (A)", (pixels[peak], intensities[peak]), 
                     xytext=(20,5), textcoords='offset points', 
                     arrowprops=dict(facecolor='black', arrowstyle='->',connectionstyle="angle,angleA=0,angleB=90,rad=10"),
                     label="Wavelengths (nm)", fontsize = f-3)
@@ -105,7 +105,7 @@ print("Centroid RMS Error: {r}".format(r=rmse_centroid))
 fig = plt.figure(figsize=(10,6))
 gs = gridspec.GridSpec(2, 1, height_ratios=[3, 1], hspace = 0.1)
 ax0 = plt.subplot(gs[0])
-ax0.set_title("Peak Centroids")
+ax0.set_title("Centroid Pixel Positions")
 ax1 = plt.subplot(gs[1], sharex = ax0)
 ax1.set_ylim(-0.5,0.5)
 ax0.plot(pixels, intensities, color = 'purple', label = 'Intensity')
@@ -165,7 +165,7 @@ linear_uncertainty = np.sqrt(np.diag(linear_cov))
 quad_uncertainty = np.sqrt(np.diag(quad_cov))
 cub_uncertainty = np.sqrt(np.diag(cub_cov))
 uncertainty_coefficients = [linear_uncertainty,quad_uncertainty,cub_uncertainty]
-print("Uncertainty of Coefficients")
+print("Polynomial Coefficient Uncertainties")
 print("----------")
 for u in uncertainty_coefficients:
     print(u)
@@ -185,7 +185,7 @@ for i, uncertainty in enumerate(uncertainty_coefficients):
         ax.axvline(current_x - 0.5, color='black', alpha=0.7, linestyle='--', linewidth=2)
 ax.set_xlabel('Fit')
 ax.set_ylabel('Uncertainty')
-ax.set_title('Coefficient Uncertainties for Each Fit')
+ax.set_title('Polynomial Coefficient Uncertainties')
 plt.xticks(rotation=90)
 plt.grid(".-")
 plt.legend(loc='best', fontsize=f)
@@ -289,7 +289,7 @@ plt.show()
 # DS9 projection which includes the FE2 emission for analysis, to rigorously find the peak using 
 # the centroid 
 
-plt.title("1D Spectrum Including Ionized Iron Gas Emission")
+plt.title("Spectrum Including Fe II Emission")
 plt.plot(emission_pixels,emission_intensities,color="teal", label="Intensity")
 plt.xlabel("Pixel Position (Y Axis)")
 plt.ylabel("Intensity")
@@ -298,7 +298,7 @@ plt.legend(loc = 'best', fontsize = f)
 plt.savefig("Lab 2/plots/supernova_pixels.pdf")
 plt.show()
 
-plt.title("1D Spectral Projection of Ionized Iron Gas From a Supernova Explosion")
+plt.title("Fe II Emission Wavelength Solution")
 plt.plot(quad(emission_pixels),emission_intensities,color="teal", label="Intensity")
 plt.xlabel("Wavelength (A)")
 plt.ylabel("Intensity")
@@ -318,7 +318,7 @@ right_emission_boundary = emission_pixels[emission_peak[0]]+range_value
 left_emission_boundary = emission_pixels[emission_peak[0]]-range_value
 
 # Plotting Centroid Bounds
-plt.title("Emission Centroid Boundary")
+plt.title("Fe II Emission Centroid Boundary")
 plt.xlabel("Pixel Position")
 plt.xlim(ymin,ymax)
 plt.ylim(0,np.max(emission_intensities+10))
@@ -356,7 +356,7 @@ ax1.grid(ls = '-.')
 ax0.set_xlim(ymin, ymax)
 ax0.set_ylim(0, np.max(emission_intensities))
 ax1.set_ylim(-1, 1)
-ax0.set_title("Centroid Pixel Location")
+ax0.set_title("Fe II Emission Pixel Position")
 plt.savefig("Lab 2/plots/supernova_centroid.pdf")
 plt.show()
 
@@ -377,7 +377,7 @@ ax1.grid(ls = '-.')
 ax0.set_xlim(quad(ymin), quad(ymax))
 ax0.set_ylim(0,np.max(emission_intensities))
 ax1.set_ylim(-1,1)
-ax0.set_title("Centroid Wavelength")
+ax0.set_title("Fe II Centroid Wavelength")
 plt.savefig("Lab 2/plots/supernova_cen_wavelength.pdf")
 plt.show()
 
@@ -404,6 +404,5 @@ intrensic_wavelength = 1.6439981 # microns
 intrensic_wavelength_angstroms = intrensic_wavelength*1e4 # angstroms
 velocity = c.c * (observed_wavelength-intrensic_wavelength_angstroms)/intrensic_wavelength_angstroms
 print("Propogated Error is {p} km/s".format(p=propogated_error))
-print(velocity)
 
 print("Velocity of FE2 Emission is {v} km/s".format(v=velocity*1e-3))

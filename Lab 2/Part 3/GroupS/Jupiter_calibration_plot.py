@@ -140,7 +140,7 @@ linear_values_all = lin(pixels)
 quad_values_all = quad(pixels)
 cub_values_all = cub(pixels)
 
-# Calculating fit only for centroid point
+# Calculating fit only for centroid points
 linear_values_cen = lin(centroids)
 quad_values_cen = quad(centroids)
 cub_values_cen = cub(centroids)

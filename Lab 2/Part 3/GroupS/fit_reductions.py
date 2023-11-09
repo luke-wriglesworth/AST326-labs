@@ -27,7 +27,7 @@ dark1_array = np.array(dark1[0].data)
 dark2_array = np.array(dark2[0].data)
 dark3_array = np.array(dark3[0].data)
 darks_array = np.array([dark1_array,dark2_array,dark3_array])
-master_dark = np.median(flats_array, axis=0)
+master_dark = np.median(darks_array, axis=0)
 
 # My darks are all 10 second exposures, so assuming the noise scales linearly I 
 # can just divide them by 2 for 5 seconds worth of noise 
@@ -43,7 +43,6 @@ flat_sub_dark = master_flat - master_dark_5S
 
 # 3. Divide 1 by 2
 final_array  = science_sub_dark / flat_sub_dark
-
 
 # Export processed FIT file 
 final_fit = fits.PrimaryHDU(final_array)
