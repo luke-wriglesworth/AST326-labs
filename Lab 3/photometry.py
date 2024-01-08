@@ -27,10 +27,9 @@ plt.rcParams['ytick.labelsize'] = 12
 def read_file(filename):
     # Need to fix bright pixels wrapping around into negative values.
     image = fits.open("AST325-326-SN-short/{f}".format(f=filename))[0].data.astype(int)
-    # -1e3 will keep the sub-zero noise but will still remove the very negative values that 
-    # are obviously due to overflow. 
     overflow_magnitude = np.abs(image[image < -500])
     max_value = 2**15-1
+    
     # unwrap negative pixels to positive
     image[image < -500] = (max_value-overflow_magnitude) + max_value
     return image
@@ -104,9 +103,6 @@ def sum_residuals(residuals):
     return np.array(errors)
         
 def median_filter_images(images, names, distances, upper, lower):
-    
-# def magnitude_filter_images(images, names,mag):
-#     continue
     good = []
     good_i = []
     bad = []
@@ -151,7 +147,8 @@ def aperture(image, xcenter, ycenter, radius, plot=False):
         plt.xlim(xcenter-20,xcenter+20)
         plt.ylim(ycenter-20,ycenter+20)
         plt.imshow(image, vmin=-100, vmax = 1e2, origin='lower', cmap='inferno')
-        plt.imshow(mask, origin='lower', cmap='inferno', alpha=0.5)
+        plt.imshow(mask, origin='lower', cmap='inferno', alpha=0.6)
+        plt.savefig("plt/aperture.pdf")
         plt.show()
     return aperture_sum
 
@@ -173,7 +170,8 @@ def annulus(image, xcenter, ycenter, inner_radius, outer_radius, plot=False):
         plt.xlim(xcenter-20,xcenter+20)
         plt.ylim(ycenter-20,ycenter+20)
         plt.imshow(image, vmin=-100, vmax = 1e2, origin='lower', cmap='inferno')
-        plt.imshow(mask, origin='lower', cmap='gray', alpha=0.3)
+        plt.imshow(mask, origin='lower', cmap='gray', alpha=0.6)
+        plt.savefig("plt/annulus.pdf")
         plt.show()
     return result, annulus_uncertainty
 
@@ -204,7 +202,10 @@ def sn_radius(sample_range1,sample_range2,x,y,box_sn):
     sn_r2 = sn_r1 + sn_r1 / 2
     print(radius_sn)
     return radius_sn, sn_r1, sn_r2
-    
+
+view(read_file("AST325-326-SN-short/AST325-326-SN-0001.fits"))
+
+
 # Sort image names in order
 sorted_names = sort_names("AST325-326-SN-filelist.txt")
 
@@ -226,19 +227,20 @@ mad = sp.stats.median_abs_deviation(distances)
 upper_bound = 1.3e11
 lower_bound = 5.2e9
 
-# # # Plot the distances to find outliers and set a threshold for images to keep. 
-# image_numbers = np.arange(0,len(sorted_names))
-# plt.title("Distances From Mean of Median")
-# plt.xlabel("Image Number")
-# plt.ylabel("Distance (Relative to median of images)")
-# plt.yscale("log")
-# plt.axhline(median_error, color = "Red", ls="--", label="Median Error")
-# plt.axhline(upper_bound, color="green", label="Upper Error Threshold: {e}".format(e=upper_bound))
-# plt.axhline(lower_bound, color="brown", label="Lower Error Threshold: {e}".format(e=lower_bound))
-# plt.scatter(image_numbers,distances,label="Distance", s=0.5)
-# plt.grid(".-")
-# plt.legend(loc="best")
-# plt.show()
+# # Plot the distances to find outliers and set a threshold for images to keep. 
+image_numbers = np.arange(0,len(sorted_names))
+plt.title("Distances From Median Image")
+plt.xlabel("Image Number")
+plt.ylabel("Distance")
+plt.yscale("log")
+plt.axhline(median_error, color = "Red", ls="--", label="Median Image")
+plt.axhline(upper_bound, color="green", label="Upper Threshold: {e}".format(e=upper_bound))
+plt.axhline(lower_bound, color="brown", label="Lower Threshold: {e}".format(e=lower_bound))
+plt.scatter(image_numbers,distances,label="Distance", s=0.5)
+plt.grid(".-")
+plt.legend(loc="best")
+plt.savefig("plt/median.pdf")
+plt.show()
 
 # Find bad/good images 
 good_imgs, good_indices, bad_imgs, bad_indices = median_filter_images(images, sorted_names, distances, upper_bound, lower_bound)
@@ -326,12 +328,13 @@ for i,image in enumerate(good_imgs):
         popt_ref3, pcov_ref3 = curve_fit(gaus, x_ref3, y_ref3, p0=[np.max(cutout_ref3), cutout_ref3.shape[0]//2, 10, 0])
 
         # # Plot the central row and the fitted Gaussian
-        # plt.figure(figsize=(10, 5))
-        # plt.plot(x, y, 'x', color='k', label='Central Row')
-        # plt.plot(x, gaus(x, *popt), color='r', alpha=0.3, label=f'Best-fit Gaussian (STD {round(popt[2], 1)})')
-        # plt.legend()
+        # plt.figure(figsize=(10, 6))
+        # plt.plot(x_ref1, y_ref1, 'x', color='k', label='Central Row of REF 1')
+        # plt.plot(x_ref1, gaus(x_ref1, *popt_ref1), color='r', alpha=0.3, label=f'Best-fit Gaussian (STD {round(popt_ref1[2], 1)})')
+        # plt.legend(loc="best", fontsize=14)
+        # plt.grid(".-")
+        # plt.savefig("plt/gaussian_fit.pdf")
         # plt.show()
-        
         
         # lets use 3 times the STD of the gaussian for the aperture radius. 
         radius_ref1 = abs(3*popt_ref1[2])
@@ -362,8 +365,8 @@ for i,image in enumerate(good_imgs):
                 measured_indices_in_good_imgs.append(i)
                 
                 # Record measurements
-                aperture_measurement_ref1.append(aperture(image, x1_cen,y1_cen,radius_ref1))
-                annulus_measurement_ref1.append(annulus(image,x1_cen,y1_cen,ref1_r1,ref1_r2))
+                aperture_measurement_ref1.append(aperture(image, x1_cen,y1_cen,radius_ref1, plot=False))
+                annulus_measurement_ref1.append(annulus(image,x1_cen,y1_cen,ref1_r1,ref1_r2, plot=False))
                 aperture_measurement_ref2.append(aperture(image, x2_cen,y2_cen,radius_ref2))
                 annulus_measurement_ref2.append(annulus(image,x2_cen,y2_cen,ref2_r1,ref2_r2))
                 aperture_measurement_ref3.append(aperture(image, x3_cen,y3_cen,radius_ref3))
@@ -380,17 +383,18 @@ for i,image in enumerate(good_imgs):
                 # # Draw centroid target lines
                 # fig = plt.figure(figsize=(10,10))
                 # ax = fig.add_subplot(111, projection=w)
+                
                 # # Zoom on ref 1
                 # ax.set_xlim(x1_cen-100,x1_cen+100)
                 # ax.set_ylim(y1_cen-100,y1_cen+100)
                 # ax.axvline(x1_cen,color="green")
                 # ax.axhline(y1_cen,color="green")
                 # ax.imshow(image, vmin=-100, vmax = 1e2, origin = 'lower', cmap = 'inferno')
+                # plt.savefig("plt/centroid.pdf")
                 # plt.show()
-
+                
 measured_indices = good_indices[measured_indices_in_good_imgs]
 
-# Indices of measured images that correspond to good_imgs array. 
 print("{f} images out of {i} remaining after final filter".format(f=len(measured_indices),i=len(images)))
 ref1_intensities = np.abs(np.array(aperture_measurement_ref1) - np.array(annulus_measurement_ref1)[:, 0])
 ref2_intensities = np.abs(np.array(aperture_measurement_ref2) - np.array(annulus_measurement_ref2)[:, 0])
@@ -414,11 +418,27 @@ ref2_intensity_uncertainty = np.square(np.sqrt(np.square(ref2_src_uncertainty) +
 ref3_intensity_uncertainty = np.square(np.sqrt(np.square(ref3_src_uncertainty) + np.square(annulus_uncertainty_ref3)))
 
 # Find where s/n ratio goes above 3 for first detection threshold
-detected_sn_3 = np.where(sn_signal_noise > 3)[0][0]
+detected_sn_3 = np.where(abs(sn_signal_noise) > 3)[0][0]
+reversed_indices = np.where(abs(sn_signal_noise[::-1]) > 3)[0]
+last_detected_sn_3 = len(sn_signal_noise) - 1 - reversed_indices[0]
+reversed_indices = np.where(sn_signal_noise[::-1] > 3)[0]
+non_detected_sn_3 = len(sn_signal_noise) - 1 - reversed_indices[0]
+
 first_detection_fn = sorted_names[measured_indices[detected_sn_3]]
+non_detection_fn = sorted_names[measured_indices[non_detected_sn_3]]
 date_detected_header = get_header(first_detection_fn)['DATE-OBS']
+non_detected_header = get_header(non_detection_fn)['DATE-OBS']
 date_detected = datetime.fromisoformat(date_detected_header)
+non_detected = datetime.fromisoformat(non_detected_header)
 sn_month_day = "{m}-{d}".format(m=date_detected.month,d=date_detected.day)
+sn_non_detected_month_day = "{m}-{d}".format(m=non_detected.month,d=non_detected.day)
+
+print("First Detection: {d}".format(d=date_detected))
+print("Last Detection: {d}".format(d=non_detected))
+# Detection uncertainty
+detection_uncertainty = np.sqrt(np.square(sn_source_uncertainty/sn_signal) + np.square(annulus_uncertainty_sn/sn_noise))*(sn_signal/sn_noise)
+print("detected uncertainty: {u}".format(u=detection_uncertainty[detected_sn_3]))
+print("last detection uncertainty {u}".format(u=detection_uncertainty[last_detected_sn_3]))
 
 # Calculate magnitudes
 ref3_mag = 15.61 # Uncertainty 0.02
@@ -426,22 +446,55 @@ ref2_mag = -2.5*np.log10(ref2_intensities/ref3_intensities) + ref3_mag
 ref1_mag = -2.5*np.log10(ref1_intensities/ref3_intensities) + ref3_mag
 sn_mag = 2.5*np.log10(ref3_intensities/sn_intensities) + ref3_mag
 
+# Calculate residuals of reference stars
+ref1_expected = 16.32 # uncertainty 0.07
+ref2_expected = 17.16 # uncertainty 0.08
+
+# Using ref 3 as the reference star
+ref1_residuals = abs(ref1_mag - ref1_expected)
+ref1_median_residual = np.median(ref1_residuals)
+ref2_residuals = abs(ref2_mag - ref2_expected)
+ref2_median_residual = np.median(ref2_residuals)
+measurements = np.linspace(0,len(ref1_residuals),len(ref1_residuals))
+
+# Check residuals of REF 1 and REF 2
+bounds = 1.3
+fig, ax = plt.subplots(2, 1, figsize=(6, 8), sharex=True)
+ax[0].set_xlabel("Measurement Number")
+ax[0].scatter(measurements, ref1_residuals, color="red", s=2, label="REF 1 Median Residual: {r}".format(r=round(ref1_median_residual, 2)))
+ax[0].set_title("Residuals of Reference Stars")
+ax[0].set_ylabel("Residuals")
+ax[0].set_ylim(-bounds, bounds)
+ax[0].grid(True)
+ax[1].scatter(measurements, ref2_residuals, color="teal", s=2, label="REF 2 Median Residual: {r}".format(r=round(ref2_median_residual, 2)))
+ax[1].set_ylabel("Residuals")
+ax[1].set_ylim(-bounds, bounds)
+ax[1].grid(True)
+plt.tight_layout()
+plt.subplots_adjust(hspace=0)
+ax[0].legend(loc='best', fontsize=14)
+ax[1].legend(loc='best', fontsize=14)
+plt.savefig("plt/residuals.pdf")
+plt.show()
+
 # Propogate reference star uncertainties to get SN magnitude uncertainties
 ref3_mag_uncertainty = 0.02
 sigma_ref1 = (2.5/np.log(10)) * (sn_intensity_uncertainty/sn_intensities)
 sigma_ref2 = (2.5/np.log(10)) * (ref2_intensity_uncertainty/ref2_intensities)
 sn_magnitude_uncertainty = np.sqrt(sigma_ref1**2 + sigma_ref2**2 + ref3_mag_uncertainty**2)
 
-plt.title("Supernova Magnitude")
+plt.title("Supernova Magnitudes")
 plt.xlabel("Image Number")
-plt.ylabel("Magnitude")
+plt.ylabel("B-Band Magnitude")
 plt.ylim(17.5, 24)
 plt.scatter(measured_indices, sn_mag, color="blue", label="Supernova Magnitude", s=2)
-plt.errorbar(measured_indices, sn_mag, yerr=sn_magnitude_uncertainty, fmt='none', color='red', label='Uncertainty', lw=0.5, alpha=0.3, ls='--')
-plt.axvline(measured_indices[detected_sn_3], color="red", ls="--", label="SN > 3: {i}".format(i=date_detected))
+plt.errorbar(measured_indices, sn_mag, yerr=sn_magnitude_uncertainty, fmt='none', color='g', label='Uncertainty', lw=0.5, alpha=0.6, ls='-')
+plt.axvline(measured_indices[detected_sn_3], color="red", ls="--", label="Epoch of First Detection: {i}".format(i=date_detected))
+plt.axvline(measured_indices[non_detected_sn_3], color="green", ls="--", label="Epoch of Last Detection: {i}".format(i=non_detected))
 plt.gca().invert_yaxis()
 plt.grid(".-")
 plt.legend()
+plt.savefig("plt/raw_mag.pdf")
 plt.show()
 
 # Get the dates of all measured images
@@ -481,11 +534,11 @@ for i in range(len(month_days)):
         intensities[index].append(intensity_current)
 
 # Plot the binned magnitudes with uncertainties
+fig = plt.figure(figsize=(12,8))
 plt.title("Supernova Magnitudes")
 plt.xlabel("Days")
-plt.ylabel("Magnitude")
+plt.ylabel("B-Band Magnitude")
 plt.ylim(17.5, 24.5)
-plt.xlim(-20,20)
 plt.xticks(rotation=45)
 plt.gca().invert_yaxis()
 for i in range(len(days)):
@@ -493,13 +546,14 @@ for i in range(len(days)):
     measurement_list = measurements[i]
     uncertainty_list = uncertainties[i]
     measurements_in_day = len(measurement_list) * [day]
-    plt.errorbar(measurements_in_day, measurement_list, yerr=uncertainty_list, fmt='o', markersize=3, capsize=3, alpha=0.3, lw=0.5, color='blue', ls='--', ecolor='darkblue')
+    plt.errorbar(measurements_in_day, measurement_list, yerr=uncertainty_list, fmt='o', markersize=3, capsize=3, alpha=0.3, lw=0.5, color='g', ls='--', ecolor='g')
     plt.scatter(measurements_in_day, measurement_list, color='blue', s=5)
 detection = plt.axvline(sn_month_day, color="red", ls="--", label="First Detection: {i}".format(i=date_detected))
 mag_label = lines.Line2D([], [], color='blue', marker='o', markersize=3, ls='None', label="Magnitude Measurement")
 uncertainty_label = lines.Line2D([], [], color='darkblue', marker='o', markersize=3, ls='None', label="Uncertainty")
 plt.legend(loc="lower right", fontsize=14, handles=[mag_label, uncertainty_label, detection])
 plt.grid(".-")
+fig.savefig("plt/binned_uncertainty.pdf")
 plt.show()
 
 # Calculate weighted mean of each day based on uncertainties, also calculate mean uncertainty
@@ -510,24 +564,28 @@ for i in range(len(days)):
     uncertainty_list = uncertainties[i]
     weights = 1 / np.array(uncertainty_list)
     weighted_mean = np.sum(measurement_list * weights) / np.sum(weights)
-    mean_uncertainty = np.mean(np.array(uncertainty_list))
+    mean_uncertainty = 1/np.sum(1/np.array(uncertainty_list)**2)
     weighted_means.append(weighted_mean)
     mean_uncertainties.append(mean_uncertainty)
 
-plt.title("Weighted Mean Magnitudes")
+fig = plt.figure(figsize=(12,8))
+plt.title("Weighted Mean of Supernova Magnitudes")
 plt.xlabel("Days")
-plt.ylabel("Magnitude")
+plt.ylabel("B-Band Magnitude")
 plt.ylim(17.5, 24.5)
 plt.xticks(rotation=45)
 plt.gca().invert_yaxis()
-plt.scatter(days, weighted_means, color='blue', label='Weighted Mean', s=7)
+plt.scatter(days, weighted_means, color='blue', label='Weighted Mean', s=40)
 plt.errorbar(days, weighted_means, yerr=mean_uncertainties, fmt='none', color='green', label='Mean Uncertainty', lw=0.5, alpha=0.3, ls='--')
 plt.axvline(sn_month_day, color="red", ls="--", label="First Detection: {i}".format(i=date_detected))
+plt.axvline(sn_non_detected_month_day, color="brown", ls="--", label="Non-Detection: {i}".format(i=non_detected))
 mag_label = lines.Line2D([], [], color='blue', marker='o', markersize=3, ls='None', label="Weighted Mean")
 uncertainty_label = lines.Line2D([], [], color='green', marker='o', markersize=3, ls='None', label="Mean Uncertainty")
 detection = plt.axvline(sn_month_day, color="red", ls="--", label="First Detection: {i}".format(i=date_detected))
-plt.legend(loc="lower right", fontsize=14, handles=[mag_label, uncertainty_label, detection])
+non_detection = plt.axvline(sn_non_detected_month_day, color="brown", ls="--", label="Non-Detection: {i}".format(i=non_detected))
+plt.legend(loc="lower right", fontsize=14, handles=[mag_label, uncertainty_label, detection, non_detection])
 plt.grid(".-")
+fig.savefig("plt/weighted_mean.pdf")
 plt.show()
 
 # Fit a polynomial to the weighted mean
@@ -535,23 +593,49 @@ poly2 = np.polyfit(np.arange(len(days)), weighted_means, 2)
 poly3 = np.polyfit(np.arange(len(days)), weighted_means, 3)
 poly4 = np.polyfit(np.arange(len(days)), weighted_means, 4)
 
-# Evaluate magnitudes from polynomial
+# Get uncertainty of the peak magnitude
+peak_magnitude_uncertainty2 = np.std(abs(weighted_means - np.polyval(poly2, np.arange(len(days)))))
+peak_magnitude_uncertainty3 = np.std(abs(weighted_means - np.polyval(poly3, np.arange(len(days)))))
+peak_magnitude_ucnertainty4 = np.std(abs(weighted_means - np.polyval(poly4, np.arange(len(days)))))
+
+# Evaluate magnitudes from polynomials and find the peak magnitude
 magnitudes4 = np.polyval(poly4, np.arange(len(days)))
 magnitudes3 = np.polyval(poly3, np.arange(len(days)))
+magnitudes2 = np.polyval(poly2, np.arange(len(days)))
+
 peak_day_index3 = np.argmin(magnitudes3)
-peak_time_measurement = np.argmax(np.array(measurements[peak_day_index3]))
-peak_time_name = full_names[peak_day_index3][peak_time_measurement]
-peak_magnitude = magnitudes3[peak_day_index3]
+peak_day_index2 = np.argmin(magnitudes2)
+peak_day_index4 = np.argmin(magnitudes4)
+
+peak_time_measurement3 = np.argmax(np.array(measurements[peak_day_index3]))
+peak_time_measurement2 = np.argmax(np.array(measurements[peak_day_index2]))
+peak_time_measurement4 = np.argmax(np.array(measurements[peak_day_index4]))
+
+peak_time_name4 = full_names[peak_day_index4][peak_time_measurement4]
+peak_time_name3 = full_names[peak_day_index3][peak_time_measurement3]
+peak_time_name2 = full_names[peak_day_index2][peak_time_measurement2]
+
+peak_magnitude3 = magnitudes3[peak_day_index3]
+peak_magnitude2 = magnitudes2[peak_day_index2]
+peak_magnitude4 = magnitudes4[peak_day_index4]
 
 date_detected_index = days.index(sn_month_day)
+date_detected_unbinned = month_days.index(sn_month_day)
+
+
+print("Peak Magnitude (Quadratic): {m}".format(m=peak_magnitude2))
+print("Peak Magnitude (Cubic): {m}".format(m=peak_magnitude3))
+print("Peak Magnitude (Quartic): {m}".format(m=peak_magnitude4))
+print("--------------------------------")
+print("Peak Magnitude Uncertainty (Linear): {m}".format(m=peak_magnitude_uncertainty2))
+print("Peak Magnitude Uncertainty (Cubic): {m}".format(m=peak_magnitude_uncertainty3))
+print("Peak Magnitude Uncertainty (Quartic): {m}".format(m=peak_magnitude_ucnertainty4))
+
 days_since_detection = [i - date_detected_index - 1 for i in range(len(days))]
 days_since_detection_np = np.array(days_since_detection)
 
-print("Peak Magnitude: {m}".format(m=magnitudes3[peak_day_index3]))
-
 # Plot weighted mean along with binned data, and fit polynomials to the weighted mean.
-fig, ax1 = plt.subplots()
-fig.figsize=(12,9)
+fig, ax1 = plt.subplots(figsize=(12,8))
 ax1.set_title("Supernova Magnitude", pad=5)
 ax1.set_xlabel("Date")
 ax1.set_ylabel("B-Band Magnitude")
@@ -566,39 +650,77 @@ for i in range(len(days)):
     measurements_in_day = len(measurement_list) * [day]
     ax1.errorbar(measurements_in_day, measurement_list, yerr=uncertainty_list, fmt='o', markersize=3, capsize=3, alpha=0.3, lw=0.5, color='blue', ls='--', ecolor='darkblue')
     ax1.scatter(measurements_in_day, measurement_list, color='blue', s=5)
-ax1.scatter(days, weighted_means, color='red', marker='x', label='Weighted Mean', s=18)
+ax1.scatter(days, weighted_means, color='red', marker='x', label='Weighted Mean', s=50)
 ax2 = ax1.twiny()
 ax2.set_xlabel("Days Since Epoch of First Detection", fontsize=12)
 ax2.set_xticks(days_since_detection_np)
 ax2.set_xticklabels(days_since_detection, rotation=45)
 ax2.xaxis.set_ticks_position('top')
-ax1.plot(days, magnitudes3, color='orange', label='3rd Order Polynomial Fit', ls='--')
+ax1.plot(days, magnitudes4, color='orange', label='4th Order Polynomial Fit', ls='--')
+non_detection = ax1.axvline(sn_non_detected_month_day, color="green", ls="--", label="Epoch of Non-Detection: {i}".format(i=non_detected))
 detection = ax1.axvline(sn_month_day, color="red", ls="--", label="Epoch of First Detection: {i}".format(i=date_detected))
-peak_brightness_cubic = ax1.axvline(days[peak_day_index3], color="brown", ls="--")
+peak_brightness_quartic = ax1.axvline(days[peak_day_index4], color="blue", ls="--", label="Epoch of Peak Brightness: {i}".format(i=peak_time_name4))
 mag_label = lines.Line2D([], [], color='blue', marker='o', markersize=3, ls='None', label="Magnitude Measurement")
 uncertainty_label = lines.Line2D([], [], color='darkblue', marker='o', markersize=2, ls='None', label="Uncertainty")
 weighted_mean_label = lines.Line2D([], [], color='red', marker='x', markersize=9, ls='None', label="Weighted Mean")
-polynomial_label = lines.Line2D([], [], color='purple', ls='--', label="3rd Order Polynomial Fit")
-plt.legend(loc="lower right", fontsize=14, handles=[mag_label, uncertainty_label, weighted_mean_label, polynomial_label, detection, peak_brightness_cubic])
-plt.show()
-
-# Power law chi squared fitting
-
-# Plot normalized intensities
-plt.title("Supernova Normalized Intensity")
-plt.xlabel("Days")
-plt.ylabel("Normalized Intensity")
-plt.xlim(0,len(days)) 
-plt.set_xticks(days_since_detection_np) 
-plt.xticks(rotation=45)
-#plt.gca().invert_yaxis()
-for i in range(len(days)):
-    day = days[i]
-    intensity_list = intensities[i]
-    measurements_in_day = len(intensity_list) * [day]
-    plt.scatter(measurements_in_day, intensity_list, color='blue', s=5)
-detection = plt.axvline(sn_month_day, color="red", ls="--", label="First Detection: {i}".format(i=date_detected))
-intensity_label = lines.Line2D([], [], color='blue', marker='o', markersize=3, ls='None', label="Normalized Intesnity")
-plt.legend(loc="lower right", fontsize=14, handles=[intensity_label])
+polynomial_label = lines.Line2D([], [], color='orange', ls='--', label="4th Order Polynomial Fit")
+plt.legend(loc="lower right", fontsize=14, handles=[mag_label, uncertainty_label, weighted_mean_label, polynomial_label, detection, non_detection, peak_brightness_quartic])
 plt.grid(".-")
+plt.savefig("plt/weighted_mean_poly.pdf")
 plt.show()
+
+normalized_intensity = 10**(-(np.array(sn_mag) - peak_magnitude4)/2.5)
+# Plot normalized light curve
+t = np.arange(0, len(normalized_intensity[date_detected_unbinned:]),1)
+t_days = np.arange(0,len(days))
+plt.xticks(t_days)
+plt.title("Normalized Intensity Supernova Curve")
+plt.scatter(t, normalized_intensity[date_detected_unbinned:], color="red", label="Normalized Intensity", s=5)
+plt.xlabel("Days Since Epoch of First Detection")
+plt.ylim(0,1.2)
+plt.ylabel("Normalized Intensity")
+plt.grid(".-")
+plt.legend()
+plt.show()
+
+def func(t, C, t1):
+    return C*(t-t1)**2
+
+# data to fit
+data = normalized_intensity[:date_detected_unbinned+20]
+t_data = np.arange(np.negative(len(normalized_intensity[:date_detected_unbinned])), len(normalized_intensity[date_detected_unbinned:date_detected_unbinned+20]), 1)
+
+# Initial guess for the parameters
+C_initial = 0.004279039146597766
+t1_initial = -1
+p0 = [C_initial, t1_initial]
+params, params_covariance = curve_fit(func, t_data, data, p0)
+
+# Results
+print("C =", params[0])
+print("t1 =", params[1])
+
+# Calculate the residual and the reduced chi-square
+residuals = data - func(t_data, params[0], params[1])
+chi_squared = np.sum((residuals)**2)
+reduced_chi_squared = chi_squared / (len(t_data) - len(p0))
+
+print("Reduced Chi-squared: ", reduced_chi_squared)
+print("Covariance Matrix: ", params_covariance)
+print("Uncertainties in parameters: ", np.sqrt(np.diag(params_covariance)))
+
+# Plot the fitted curve
+plt.title("Normalized Intensity Supernova Curve)")
+plt.xticks(t_days)
+plt.scatter(t, normalized_intensity[date_detected_unbinned:], color="red", label="Normalized Intensity", s=5)
+plt.plot(t_data, func(t_data, params[0], params[1]), label='Chi-Squared = {c}'.format(c=round(reduced_chi_squared,4)))
+plt.xlabel("Days")
+plt.ylim(0,0.4)
+plt.xlim(0,19)
+plt.xticks(rotation=45) 
+plt.ylabel("Normalized Intensity")
+plt.grid(".-")
+plt.legend()
+plt.savefig("plt/power_law.pdf")
+plt.show()
+
