@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{bookmark}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage[titletoc,toc,page]{appendix}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{authblk}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\floatstyle{plain} 
+\restylefloat{figure}
+\title{AST326 Lab 4: Asteroid Astrometry}
+\author{Luke Wriglesworth \\ \small luke.wriglesworth@mail.utoronto.ca}
+\date{\today}
+\begin{document} % Add this line
+\maketitle
+
+\begin{abstract}
+In this report, CCD data obtained using the Dunlap Institute telescope is used to observe the position 26 Proserpina, a large main-belt asteroid. The pixel coordinates of the stationary background stars relative
+to 26 Proserpina are measured, and are mapped to well-studied stars contained in the USNO-1 star catalog. A plate solution is found using these reference stars is found, which maps the pixel coordinates 
+of the CCD to the celestial coordinate system. 26 Proserpina's pixel position is measured across measurements spanning seven days, and the pixel coordinates are mapped to celestial coordinates. 26 Proserpina's right ascension and 
+declination are calculated, and the asteroid's trajectory and velocity are determined using linear regression techniques. The trajectory of 26 Proserpina is plotted, and magnitude of the asteroid's velocity is found to be $0.30 \pm 0.027$ 
+arcseconds per hour. The asteroid's velocity in right ascension is found to be $-0.30 \pm 0.02$ arcseconds per hour, and the velocity in declination is found to be $-0.007 \pm 0.018$ arcseconds per minute.  
+\end{abstract}
+
+
+\section{Introduction}
+Asteroids are large bodies of rock and metal that were formed at the same time the solar system formed. Asteroids that orbit in the asteroid belt
+between Mars and Jupiter are called main-belt asteroids, and are the result of smaller bodies smashing together due to Jupiter's gravity at the time of its formation.
+The asteroid studied in this report is 26 Proserpina, a main-belt asteroid that was first discovered in 1895, and is approximately 95 kilometres in diameter. The technique 
+used to study this astroid is called astronometry, which is the precise measurement of celestial objects in reference to an established coordinate system. This is a very broad branch of 
+astronomy, and includes modern methods such as interferometry and radio astronomy. In this report, a very simple method is used, which is to compare the objects position over time
+to a background that appears stationary to the observer. The pixel coordinates of stars behind 26 Proserpina are measured as precisely as possible, and then are cross-correlated to the USNO-B1 
+star catalog, which provides 0.2 arcsecond accurcacy. The right ascension and declination of the matched USNO-B1 stars are projected from the celestial sphere onto the plane of the CCD to obtain standard coordinates, 
+and a plate solution is found between the standard coordinates and the pixel coordinates of the CCD. The pixel coordinates of 26 Proserpina are measured using a Gaussian fitting over a series of four measurements, spannning
+7 days. The measured centroids are then converted to celestial coordinates using the inverse plate solution, and the asteroid's trajectory is plotted and its velocity is calculated. 
+
+\newpage
+
+\section{Data}
+The data used to study 26 Proserpina was obtained using the Dunlap Institute telescope, which is a 50-cm robotic telescope 
+located at Mt. Joy, near Mayhill, New Mexico. The telescope has a 50-cm diameter primary mirror, that provides a 36.2 arc minute field of view,  
+The CCD images were obtained between 2012 between January 20th and January 26th, with 60 second exposure times. The CCD used with the telescope is a Kodak KAF-16803 CCD, 
+equipped with a 4096 x 4096 pixel array, with a pixel scale of 0.53 arc seconds per pixel. Each pixel was binned, which means that the 4 pixels surrounding each pixel were combined
+to form a single pixel, which reduces the resolution of the image to 2048 x 2048 pixels. 
+
+Each of the header files for each image are examined to obtain the dates and times of each observation, and also to make sure that the temperature controller was active during the observations and
+calibration frames. Unfortunately, temperature controller was not turned on during dark calibration frame for one of the days. Because of the 30 C temperature discrepancy, 
+these images likely include a significantly different amount of noise than the other images, so it was not used for further processing. Each of the calibration frames were combined into
+a master dark and flat, and the master dark was subtracted from each image, while the master flat was divided into each image.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/Sky.pdf}
+    \caption{An example sky image after calibration. 26 Proserpina is visible in the very center of the frame.}
+    \label{fig:skyimg}
+\end{figure}
+
+Another source of data used to study 26 Proserpina is the USNO-B1 star catalog, which contains detailed information of all the background stars visible in the sky images. The quantity of stars contained in the catalog
+in the field of view of the CCD is overwhelming, so the catalog is limited to stars with R2 magnitudes less than 17, and a rectangular field of view of 39 arc minutes centered in the middle of the sky image. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{img/USNO.pdf}
+    \caption{USNO-B1 used for cross-matching. The right ascension and declination of each star is used to find a plate solution for the sky images.}
+    \label{fig:usno}
+\end{figure}
+\section{Methodology}
+
+\subsection{Star Region Detection and Centroids}
+
+The most important step in the analysis of the sky images is getting very accurate coordinates of the visible stars to use for cross-matching with the catalog. Additionally, 
+it is necessary to measure the uncertainty of each of these coordinates in order to make meaningful conclusions about the results. The method used is a three-step process. First, 
+a binary mask is applied to the image, which shows the regions of stars with intensities greater than a certain threshold. A plot of this binary image is show in Figure \ref{fig:binary}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.7\textwidth]{img/binary_mask.pdf}
+    \caption{The binary mask of the sky image, with the centroids of the stars detected.}
+    \label{fig:binary}
+\end{figure}
+
+Next, \verb|NumPy's| label function is used to assign
+each of these images a unique integer. This is done to avoid double counting stars that may get detected as two different stars. Next each of these unique integers is looped through, 
+and a traditional centroid is calculated for each of the star regions. For each of the centroids, a 2D Gaussian function is fit to the same region used for the centroid calculation, which gives
+gives an improved calculation of the centroid.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/centroid_0.pdf}
+    \caption{An example showing the three-step process used for calculating the pixel coordinates of each star}
+    \label{fig:centroid}
+\end{figure}
+
+The biggest advantage of using a Gaussian fitting for each of the stars is that it provides a measure of the uncertainty for the centroid. 
+The uncertainty is calculated by taking the square root of the diagonal elements of the covariance matrix, and the greatest of these values is used
+as the uncertainty for each of the centroids. A threshold uncertainty is set at 0.125, and any star with an uncertainty greater than this value is not 
+used for further analysis. This value was set empirically, as outliers mostly fell out of this range. For error propagation purposes, the median uncertainty
+of 0.0098 of the distribution is taken as the uncertainty for the entire set of centroids. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/centroid_std.pdf}
+    \caption{The distribution of uncertainties for the centroids of the stars. The median of this distribution is used as the uncertainty for the entire set of centroids.}
+    \label{fig:centroid_std}
+\end{figure}
+
+\subsection{Conversion to Standard Coordinates}
+After the pixel coordinates of the stars on the CCD are determined, the coordinates of the USNO-B1 stars are converted from celestial
+coordinates into standard coordinates, and then into approximate pixel positions using the equations given in the lab manual. This requires a rotation of 1.2 degrees, and a vertical 
+and horizontal translation to account for the difference origin of the two coordinate systems.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{img/standard_coords.pdf}
+    \caption{The USNO-B1 star positions converted into approximate pixel positions.}
+    \label{fig:approx_coords}
+\end{figure}
+
+\subsection{Cross-Matching with the USNO-B1 Catalog}
+
+The euclidean distance is now calculated between each of the centroids and all the other stars in the filtered USNO-B1 catalog, with a 12 pixel threshold 
+to be considered as a match. The star with the smallest distance is then chosen as the cross-matched star, and the right ascension and declination is associated with the pixel coordinates of the centroid in a Pandas data frame.
+The residuals associated with this initial transformation are shown in Figure \ref{fig:residuals}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/approx_residuals.pdf}
+    \caption{The residuals of the cross-matching between the centroids and the USNO-B1 catalog.}
+    \label{fig:residuals}
+\end{figure}
+
+\subsection{Plate Solution}
+
+Finally, a linear least squares fitting is applied to find a direct mapping between the standard coordinates of the USNO-B1 stars and the pixel coordinates 
+of the centroids of the CCD. The residuals of this transformation are shown in Figure \ref{fig:plate_residuals}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/1stsolve_residuals.pdf}
+    \caption{The residuals of the plate solution.}
+    \label{fig:plate_residuals}
+\end{figure}
+
+This initial transformation gave a $\chi^2_{x}$ value of 34.86 and $\chi^2_{y}$ value of 38.93, which is not ideal, but is acceptable for a first iteration and a great improvement 
+over the first approximation
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/plate_hist.pdf}
+    \caption{A histogram showing the comparison between the initial transformation and the least squares solution. The vast majority of points are 
+    within 1.5 pixels error.}
+    \label{fig:plate_solution}
+\end{figure}
+
+Next, all the points with residuals greater than 1 pixel are removed from the Pandas data frame, and the least squares solver is run again. 
+The residuals of this transformation are shown in Figure \ref{fig:plate_residuals2}. Now all the residuals are almost within 1 pixel, and 
+the $\chi^2_{x}$ value is 18.5 and the $\chi^2_{y}$ value is 18.5. This is still not great, but is pretty good considering the number of sample points.
+The total RMS error of this transformation is 0.392, which will be used for error propagation purposes when analyzing 26 Proserpina.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/final_residuals.pdf}
+    \caption{The residuals of the plate solution after the first iteration.}
+    \label{fig:plate_residuals2}
+\end{figure}
+
+\section{Analysis}
+
+\section{Discussion}
+
+\begin{appendices}
+    
+\section{Python Code}
+
+
+\end{appendices}
+
+\end{document}
