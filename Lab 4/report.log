@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.3)  10 FEB 2024 03:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.3)  10 FEB 2024 15:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -351,15 +351,15 @@ LaTeX Font Info:    ... okay on input line 27.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* h-part:(L,W,R)=(28.90755pt, 556.4799pt, 28.90755pt)
+* v-part:(T,H,B)=(28.90755pt, 737.15489pt, 28.90755pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=469.75502pt
-* \textheight=650.43001pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-37.0pt
+* \textwidth=556.4799pt
+* \textheight=737.15489pt
+* \oddsidemargin=-43.36244pt
+* \evensidemargin=-43.36244pt
+* \topmargin=-80.36244pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -409,75 +409,322 @@ Package caption Info: End \AtBeginDocument code.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<img/Sky.pdf, id=18, 1734.48pt x 867.24pt>
+<img/Sky.pdf, id=19, 1734.48pt x 867.24pt>
 File: img/Sky.pdf Graphic file (type pdf)
 <use img/Sky.pdf>
-Package pdftex.def Info: img/Sky.pdf  used on input line 67.
-(pdftex.def)             Requested size: 375.80544pt x 187.89536pt.
-<img/USNO.pdf, id=19, 433.62pt x 289.08pt>
+Package pdftex.def Info: img/Sky.pdf  used on input line 65.
+(pdftex.def)             Requested size: 556.4799pt x 278.23706pt.
+<img/USNO.pdf, id=20, 433.62pt x 289.08pt>
 File: img/USNO.pdf Graphic file (type pdf)
 <use img/USNO.pdf>
 Package pdftex.def Info: img/USNO.pdf  used on input line 77.
-(pdftex.def)             Requested size: 281.85587pt x 187.913pt.
+(pdftex.def)             Requested size: 333.89133pt x 222.60551pt.
  [2 <./img/sky.pdf>]
-<img/binary_mask.pdf, id=70, 462.52798pt x 346.89601pt>
+<img/binary_mask.pdf, id=71, 462.52798pt x 346.89601pt>
 File: img/binary_mask.pdf Graphic file (type pdf)
 <use img/binary_mask.pdf>
 Package pdftex.def Info: img/binary_mask.pdf  used on input line 91.
-(pdftex.def)             Requested size: 328.82707pt x 246.63135pt.
+(pdftex.def)             Requested size: 389.53423pt x 292.16347pt.
  [3 <./img/usno.pdf> <./img/binary_mask.pdf>]
-<img/centroid_0.pdf, id=156, 867.24pt x 433.62pt>
+<img/centroid_0.pdf, id=158, 867.24pt x 433.62pt>
 File: img/centroid_0.pdf Graphic file (type pdf)
 <use img/centroid_0.pdf>
-Package pdftex.def Info: img/centroid_0.pdf  used on input line 104.
-(pdftex.def)             Requested size: 469.75502pt x 234.87912pt.
-<img/centroid_std.pdf, id=157, 867.24pt x 433.62pt>
+Package pdftex.def Info: img/centroid_0.pdf  used on input line 103.
+(pdftex.def)             Requested size: 556.4799pt x 278.25027pt.
+<img/centroid_std.pdf, id=159, 867.24pt x 433.62pt>
 File: img/centroid_std.pdf Graphic file (type pdf)
 <use img/centroid_std.pdf>
-Package pdftex.def Info: img/centroid_std.pdf  used on input line 117.
-(pdftex.def)             Requested size: 375.80544pt x 187.90198pt.
+Package pdftex.def Info: img/centroid_std.pdf  used on input line 116.
+(pdftex.def)             Requested size: 445.18561pt x 222.59229pt.
  [4 <./img/centroid_0.pdf> <./img/centroid_std.pdf>]
-<img/standard_coords.pdf, id=242, 867.24pt x 722.7pt>
+<img/standard_coords.pdf, id=244, 867.24pt x 722.7pt>
 File: img/standard_coords.pdf Graphic file (type pdf)
 <use img/standard_coords.pdf>
-Package pdftex.def Info: img/standard_coords.pdf  used on input line 129.
-(pdftex.def)             Requested size: 375.80544pt x 313.16995pt.
-<img/approx_residuals.pdf, id=244, 867.24pt x 433.62pt>
+Package pdftex.def Info: img/standard_coords.pdf  used on input line 127.
+(pdftex.def)             Requested size: 445.18561pt x 370.98714pt.
+<img/approx_residuals.pdf, id=246, 867.24pt x 289.08pt>
 File: img/approx_residuals.pdf Graphic file (type pdf)
 <use img/approx_residuals.pdf>
-Package pdftex.def Info: img/approx_residuals.pdf  used on input line 142.
-(pdftex.def)             Requested size: 469.75502pt x 234.87912pt.
+Package pdftex.def Info: img/approx_residuals.pdf  used on input line 140.
+(pdftex.def)             Requested size: 556.4799pt x 185.50018pt.
  [5 <./img/standard_coords.pdf>]
-<img/1stsolve_residuals.pdf, id=289, 867.24pt x 216.81pt>
+<img/1stsolve_residuals.pdf, id=291, 867.24pt x 289.08pt>
 File: img/1stsolve_residuals.pdf Graphic file (type pdf)
 <use img/1stsolve_residuals.pdf>
-Package pdftex.def Info: img/1stsolve_residuals.pdf  used on input line 154.
-(pdftex.def)             Requested size: 469.75502pt x 117.43956pt.
-<img/plate_hist.pdf, id=290, 867.24pt x 361.35pt>
+Package pdftex.def Info: img/1stsolve_residuals.pdf  used on input line 152.
+(pdftex.def)             Requested size: 556.4799pt x 185.50018pt.
+<img/plate_hist.pdf, id=293, 867.24pt x 361.35pt>
 File: img/plate_hist.pdf Graphic file (type pdf)
 <use img/plate_hist.pdf>
-Package pdftex.def Info: img/plate_hist.pdf  used on input line 164.
-(pdftex.def)             Requested size: 469.75502pt x 195.7326pt.
+Package pdftex.def Info: img/plate_hist.pdf  used on input line 163.
+(pdftex.def)             Requested size: 556.4799pt x 231.87523pt.
  [6 <./img/approx_residuals.pdf> <./img/1stsolve_residuals.pdf>]
-<img/final_residuals.pdf, id=379, 867.24pt x 216.81pt>
+<img/final_residuals.pdf, id=383, 867.24pt x 289.08pt>
 File: img/final_residuals.pdf Graphic file (type pdf)
 <use img/final_residuals.pdf>
-Package pdftex.def Info: img/final_residuals.pdf  used on input line 177.
-(pdftex.def)             Requested size: 469.75502pt x 117.43956pt.
- [7 <./img/plate_hist.pdf> <./img/final_residuals.pdf>] (./report.aux) ) 
+Package pdftex.def Info: img/final_residuals.pdf  used on input line 176.
+(pdftex.def)             Requested size: 556.4799pt x 185.50018pt.
+ [7 <./img/plate_hist.pdf> <./img/final_residuals.pdf>]
+<img/proserpina_day1.pdf, id=482, 867.24pt x 433.62pt>
+File: img/proserpina_day1.pdf Graphic file (type pdf)
+<use img/proserpina_day1.pdf>
+Package pdftex.def Info: img/proserpina_day1.pdf  used on input line 225.
+(pdftex.def)             Requested size: 272.6782pt x 136.33958pt.
+<img/proserpina_day2.pdf, id=483, 867.24pt x 433.62pt>
+File: img/proserpina_day2.pdf Graphic file (type pdf)
+<use img/proserpina_day2.pdf>
+Package pdftex.def Info: img/proserpina_day2.pdf  used on input line 231.
+(pdftex.def)             Requested size: 272.6782pt x 136.33958pt.
+<img/proserpina_day3.pdf, id=484, 867.24pt x 433.62pt>
+File: img/proserpina_day3.pdf Graphic file (type pdf)
+<use img/proserpina_day3.pdf>
+Package pdftex.def Info: img/proserpina_day3.pdf  used on input line 236.
+(pdftex.def)             Requested size: 272.6782pt x 136.33958pt.
+<img/proserpina_day4.pdf, id=485, 867.24pt x 433.62pt>
+File: img/proserpina_day4.pdf Graphic file (type pdf)
+<use img/proserpina_day4.pdf>
+Package pdftex.def Info: img/proserpina_day4.pdf  used on input line 242.
+(pdftex.def)             Requested size: 272.6782pt x 136.33958pt.
+<img/proserpina_ra_dec.pdf, id=487, 1156.32pt x 433.62pt>
+File: img/proserpina_ra_dec.pdf Graphic file (type pdf)
+<use img/proserpina_ra_dec.pdf>
+Package pdftex.def Info: img/proserpina_ra_dec.pdf  used on input line 260.
+(pdftex.def)             Requested size: 556.4799pt x 208.67778pt.
+ [8 <./img/proserpina_day1.pdf> <./img/proserpina_day2.pdf> <./img/proserpina_day3.pdf> <./img/proserpina_day4.pdf>]
+<img/proserpina_ra_jd.pdf, id=606, 867.24pt x 361.35pt>
+File: img/proserpina_ra_jd.pdf Graphic file (type pdf)
+<use img/proserpina_ra_jd.pdf>
+Package pdftex.def Info: img/proserpina_ra_jd.pdf  used on input line 271.
+(pdftex.def)             Requested size: 556.4799pt x 231.87523pt.
+<img/proserpina_dec_jd.pdf, id=607, 867.24pt x 361.35pt>
+File: img/proserpina_dec_jd.pdf Graphic file (type pdf)
+<use img/proserpina_dec_jd.pdf>
+Package pdftex.def Info: img/proserpina_dec_jd.pdf  used on input line 278.
+(pdftex.def)             Requested size: 556.4799pt x 231.87523pt.
+ [9 <./img/proserpina_ra_dec.pdf> <./img/proserpina_ra_jd.pdf>] [10 <./img/proserpina_dec_jd.pdf>] [11]
+Overfull \hbox (24.68834pt too wide) in paragraph at lines 519--519
+[]    \OT1/cmtt/m/n/9 cof = coord.SkyCoord(header(astroids[0])['RA'], header(astroids[0])['DEC'], unit=(u.hourangle, u.deg), equinox='J2000')[] 
+ []
+
+[12]
+Overfull \hbox (105.0124pt too wide) in paragraph at lines 519--519
+[]        \OT1/cmtt/m/n/9 X = -((np.cos(delta)*np.sin(alpha - alpha_0))/((np.cos(delta_0))*np.cos(delta)*np.cos(alpha-alpha_0)+np.sin(delta)*np.sin(delta_0)))[] 
+ []
+
+
+Overfull \hbox (303.4601pt too wide) in paragraph at lines 519--519
+[]        \OT1/cmtt/m/n/9 Y = -((np.sin(delta_0)*np.cos(delta)*np.cos(alpha-alpha_0)-np.cos(delta_0)*np.sin(delta))/(np.cos(delta_0)*np.cos(delta)*np.cos(alpha-alpha_0)+np.sin(delta)*np.sin(delta_0)))[] 
+ []
+
+
+Overfull \hbox (34.13823pt too wide) in paragraph at lines 519--519
+[]    \OT1/cmtt/m/n/9 approximate_x, approximate_y = initial_transform(usno_stars, focal_length, pixel_size, rotation, cof, x_offset, y_offset)[] 
+ []
+
+
+Overfull \hbox (48.31306pt too wide) in paragraph at lines 554--554
+[]        \OT1/cmtt/m/n/9 distances = cdist(centroid_catalog[['centroid_x', 'centroid_y']], catalog[['approx_x', 'approx_y']], metric='euclidean')[] 
+ []
+
+[13]
+Overfull \hbox (147.53691pt too wide) in paragraph at lines 554--554
+[]    \OT1/cmtt/m/n/9 usno_reduced = usno_reduced[['USNO-B1.0','RAJ2000','DEJ2000','approx_x','approx_y','x_centroid','y_centroid','separation','R2mag','pmRA','pmDE']][] 
+ []
+
+
+Overfull \hbox (57.76295pt too wide) in paragraph at lines 596--596
+[]\OT1/cmtt/m/n/9 X = -(np.cos(delta)*np.sin(alpha - alpha_0))/((np.cos(delta_0))*np.cos(delta)*np.cos(alpha-alpha_0)+np.sin(delta)*np.sin(delta_0))[] 
+ []
+
+
+Overfull \hbox (256.21065pt too wide) in paragraph at lines 596--596
+[]\OT1/cmtt/m/n/9 Y = -(np.sin(delta_0)*np.cos(delta)*np.cos(alpha-alpha_0)-np.cos(delta_0)*np.sin(delta))/(np.cos(delta_0)*np.cos(delta)*np.cos(alpha-alpha_0)+np.sin(delta)*np.sin(delta_0))[] 
+ []
+
+[14]
+Overfull \hbox (128.63713pt too wide) in paragraph at lines 676--676
+[]\OT1/cmtt/m/n/9 plt.scatter(usno_reduced['x_centroid'], usno_reduced['x_centroid'] - usno_reduced['approx_x'], s=6, color='red', label='X Residuals', marker="v")[] 
+ []
+
+
+Overfull \hbox (133.36208pt too wide) in paragraph at lines 676--676
+[]\OT1/cmtt/m/n/9 plt.scatter(usno_reduced['y_centroid'], usno_reduced['y_centroid'] - usno_reduced['approx_y'], s=6, color='blue', label='Y Residuals', marker="^")[] 
+ []
+
+
+Overfull \hbox (123.91219pt too wide) in paragraph at lines 676--676
+[]\OT1/cmtt/m/n/9 plt.scatter(usno_reduced['x_centroid'], usno_reduced['x_centroid'] - usno_reduced['x_lstsq'], s=6, color='red', label='X Residuals', marker="^")[] 
+ []
+
+
+Overfull \hbox (128.63713pt too wide) in paragraph at lines 676--676
+[]\OT1/cmtt/m/n/9 plt.scatter(usno_reduced['y_centroid'], usno_reduced['y_centroid'] - usno_reduced['y_lstsq'], s=6, color='blue', label='Y Residuals', marker="v")[] 
+ []
+
+[15]
+Overfull \hbox (128.63713pt too wide) in paragraph at lines 676--676
+[]\OT1/cmtt/m/n/9 final_stars = usno_reduced[(np.abs(usno_reduced['x_residual']) < residual_threshold) & (np.abs(usno_reduced['y_residual']) < residual_threshold)][] 
+ []
+
+
+Overfull \hbox (76.66273pt too wide) in paragraph at lines 842--842
+[]    \OT1/cmtt/m/n/9 X = -(np.cos(delta)*np.sin(alpha - alpha_0))/((np.cos(delta_0))*np.cos(delta)*np.cos(alpha-alpha_0)+np.sin(delta)*np.sin(delta_0))[] 
+ []
+
+
+Overfull \hbox (275.11043pt too wide) in paragraph at lines 842--842
+[]    \OT1/cmtt/m/n/9 Y = -(np.sin(delta_0)*np.cos(delta)*np.cos(alpha-alpha_0)-np.cos(delta_0)*np.sin(delta))/(np.cos(delta_0)*np.cos(delta)*np.cos(alpha-alpha_0)+np.sin(delta)*np.sin(delta_0))[] 
+ []
+
+
+Overfull \hbox (38.86317pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 coord1_cof = coord.SkyCoord(header(astroids[0])['RA'], header(astroids[0])['DEC'], unit=(u.hourangle, u.deg), equinox='J2000')[] 
+ []
+
+
+Overfull \hbox (38.86317pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 coord2_cof = coord.SkyCoord(header(astroids[3])['RA'], header(astroids[1])['DEC'], unit=(u.hourangle, u.deg), equinox='J2000')[] 
+ []
+
+
+Overfull \hbox (38.86317pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 coord3_cof = coord.SkyCoord(header(astroids[6])['RA'], header(astroids[2])['DEC'], unit=(u.hourangle, u.deg), equinox='J2000')[] 
+ []
+
+
+Overfull \hbox (38.86317pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 coord4_cof = coord.SkyCoord(header(astroids[9])['RA'], header(astroids[3])['DEC'], unit=(u.hourangle, u.deg), equinox='J2000')[] 
+ []
+
+[16]
+Overfull \hbox (95.56252pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 x1, y1, _, _, d1_uncertainty = star_gaussian([[coord1x],[coord1y-2]], science_imgs[0], plot=True, size=box, threshold = 1, filter = False)[] 
+ []
+
+
+Overfull \hbox (119.18724pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 x2, y2, _, _, d2_uncertainty = star_gaussian([[coord2x - 10],[coord2y+5]], science_imgs[3], plot=True, size=box, threshold = 1, filter = False)[] 
+ []
+
+
+Overfull \hbox (123.91219pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 x3, y3, _, _, d3_uncertainty = star_gaussian([[coord3x -30],[coord3y + 115]], science_imgs[6], plot=True, size=box, threshold = 1, filter=False)[] 
+ []
+
+
+Overfull \hbox (119.18724pt too wide) in paragraph at lines 842--842
+[]\OT1/cmtt/m/n/9 x4, y4, _, _, d4_uncertainty = star_gaussian([[coord4x -12],[coord4y + 92]], science_imgs[9], plot=True, size=box, threshold = 1, filter=False)[] 
+ []
+
+[17]
+Overfull \hbox (105.0124pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 ra1_proserpina = np.arctan((-X_proserpina[0])/(np.cos(coord1_cof.dec.rad) - Y_proserpina[0]*np.sin(coord1_cof.dec.rad))) + coord1_cof.ra.rad[] 
+ []
+
+
+Overfull \hbox (166.43669pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 dec1_proserpina = np.arcsin((np.sin(coord1_cof.dec.rad)+Y_proserpina[0]*np.cos(coord1_cof.dec.rad))/(np.sqrt(1+X_proserpina[0]**2 + Y_proserpina[0]**2)))[] 
+ []
+
+
+Overfull \hbox (105.0124pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 ra2_proserpina = np.arctan((-X_proserpina[1])/(np.cos(coord2_cof.dec.rad) - Y_proserpina[1]*np.sin(coord2_cof.dec.rad))) + coord2_cof.ra.rad[] 
+ []
+
+
+Overfull \hbox (175.88658pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 dec2_proserpina = np.arcsin((np.sin(coord2_cof.dec.rad) + Y_proserpina[1]*np.cos(coord2_cof.dec.rad))/(np.sqrt(1+X_proserpina[1]**2 + Y_proserpina[1]**2)))[] 
+ []
+
+
+Overfull \hbox (105.0124pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 ra3_proserpina = np.arctan((-X_proserpina[2])/(np.cos(coord3_cof.dec.rad) - Y_proserpina[2]*np.sin(coord3_cof.dec.rad))) + coord3_cof.ra.rad[] 
+ []
+
+
+Overfull \hbox (175.88658pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 dec3_proserpina = np.arcsin((np.sin(coord3_cof.dec.rad) + Y_proserpina[2]*np.cos(coord3_cof.dec.rad))/(np.sqrt(1+X_proserpina[2]**2 + Y_proserpina[2]**2)))[] 
+ []
+
+
+Overfull \hbox (105.0124pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 ra4_proserpina = np.arctan((-X_proserpina[3])/(np.cos(coord4_cof.dec.rad) - Y_proserpina[3]*np.sin(coord4_cof.dec.rad))) + coord4_cof.ra.rad[] 
+ []
+
+
+Overfull \hbox (175.88658pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 dec4_proserpina = np.arcsin((np.sin(coord4_cof.dec.rad) + Y_proserpina[3]*np.cos(coord4_cof.dec.rad))/(np.sqrt(1+X_proserpina[3]**2 + Y_proserpina[3]**2)))[] 
+ []
+
+[18]
+Overfull \hbox (379.05922pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 plt.errorbar(proserpina_calculated_ra, proserpina_calculated_dec, xerr=uncertainties_deg, yerr=uncertainties_deg,lw=2, fmt='o', color='blue', label=r"Positional Uncertainty $\approx 10^{-6}$ [deg]")[] 
+ []
+
+
+Overfull \hbox (19.9634pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 plt.scatter(normalized_times_jd, proserpina_calculated_ra, s=20, color='red', label="26 Proserpina Right Ascension [deg]")[] 
+ []
+
+
+Overfull \hbox (138.08702pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 plt.errorbar(normalized_times_jd, proserpina_calculated_ra, yerr=ra_rms, fmt='o', color='red', label=f"RMS Error = {np.round(ra_rms, 3)[0]} [deg]")[] 
+ []
+
+
+Overfull \hbox (119.18724pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 plt.plot(normalized_times_jd, ra_line(normalized_times_jd), color='blue', label = f"y = {coefficients_ra[0]}x + {coefficients_ra[1]}", ls='--')[] 
+ []
+
+
+Overfull \hbox (5.78856pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 plt.scatter(normalized_times_jd, proserpina_calculated_dec, s=20, color='red', label="26 Proserpina Declination [deg]")[] 
+ []
+
+
+Overfull \hbox (152.26186pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 plt.errorbar(normalized_times_jd, proserpina_calculated_dec, yerr=dec_rms, fmt='o', color='red', label=f"RMS Error = {np.round(dec_rms, 3)[0]} [deg]")[] 
+ []
+
+
+Overfull \hbox (123.91219pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 plt.plot(normalized_times_jd, dec_line(normalized_times_jd), color='blue', label=f"y = {coefficients_dec[0]}x + {coefficients_dec[1]}", ls='--')[] 
+ []
+
+[19]
+Overfull \hbox (71.93779pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 print("Celestial Velocity Magnitude (arcsec/min): ", np.sqrt((coefficients_ra[0]*3600/1440)**2 + (coefficients_dec[0]*3600/1440)**2))[] 
+ []
+
+
+Overfull \hbox (251.4857pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 print("Final propogated error for RA velocity (arcsec/min): ", np.sqrt(rmse_stars_arces_min**2 + median_astroid_rms_cen_per_min**2 + rmse_plate_arcsec_min**2 + ra_rms**2))[] 
+ []
+
+
+Overfull \hbox (260.9356pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 print("Final propogated error for DEC velocity (arcsec/min): ", np.sqrt(rmse_stars_arces_min**2 + median_astroid_rms_cen_per_min**2 + rmse_plate_arcsec_min**2 + dec_rms**2))[] 
+ []
+
+
+Overfull \hbox (345.9846pt too wide) in paragraph at lines 985--985
+[]\OT1/cmtt/m/n/9 print("Final propogated error for velocity magnitude (arcsec/min): ", np.sqrt(rmse_stars_arces_min**2 + median_astroid_rms_cen_per_min**2 + rmse_plate_arcsec_min**2 + ra_rms**2 + dec_rms**2))[] 
+ []
+
+[20] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 12152 strings out of 477985
- 198159 string characters out of 5840059
- 1861388 words of memory out of 5000000
- 32174 multiletter control sequences out of 15000+600000
- 517607 words of font info for 51 fonts, out of 8000000 for 9000
+ 12279 strings out of 477985
+ 200616 string characters out of 5840059
+ 1876388 words of memory out of 5000000
+ 32256 multiletter control sequences out of 15000+600000
+ 518082 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,6n,90p,636b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (7 pages, 2546776 bytes).
+ 89i,10n,90p,859b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on report.pdf (20 pages, 2732882 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 982 PDF objects out of 1000 (max. 8388607)
+ 352 compressed objects within 4 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 
