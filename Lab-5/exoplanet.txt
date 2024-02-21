@@ -1,0 +1,1832 @@
+--------------------
+r1598072.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1598073.fit
+OBS TYPE:  FLAT
+EXP TIME:  5.01
+--------------------
+r1598074.fit
+OBS TYPE:  FLAT
+EXP TIME:  6.01
+--------------------
+r1598075.fit
+OBS TYPE:  FLAT
+EXP TIME:  7.01
+--------------------
+r1598076.fit
+OBS TYPE:  FLAT
+EXP TIME:  8.01
+--------------------
+r1598077.fit
+OBS TYPE:  FLAT
+EXP TIME:  9.01
+--------------------
+r1598078.fit
+OBS TYPE:  FLAT
+EXP TIME:  10.01
+--------------------
+r1598079.fit
+OBS TYPE:  FLAT
+EXP TIME:  11.01
+--------------------
+r1598080.fit
+OBS TYPE:  FLAT
+EXP TIME:  12.01
+--------------------
+r1598081.fit
+OBS TYPE:  FLAT
+EXP TIME:  14.01
+--------------------
+r1598082.fit
+OBS TYPE:  FLAT
+EXP TIME:  15.01
+--------------------
+r1598083.fit
+OBS TYPE:  FLAT
+EXP TIME:  17.01
+--------------------
+r1598084.fit
+OBS TYPE:  FLAT
+EXP TIME:  20.01
+--------------------
+r1598085.fit
+OBS TYPE:  FLAT
+EXP TIME:  22.01
+--------------------
+r1598086.fit
+OBS TYPE:  FLAT
+EXP TIME:  25.01
+--------------------
+r1598087.fit
+OBS TYPE:  FLAT
+EXP TIME:  28.01
+--------------------
+r1598088.fit
+OBS TYPE:  FLAT
+EXP TIME:  30.01
+--------------------
+r1598089.fit
+OBS TYPE:  FLAT
+EXP TIME:  32.01
+--------------------
+r1599966.fit
+OBS TYPE:  FLAT
+EXP TIME:  30.01
+--------------------
+r1599967.fit
+OBS TYPE:  FLAT
+EXP TIME:  28.01
+--------------------
+r1599968.fit
+OBS TYPE:  FLAT
+EXP TIME:  26.01
+--------------------
+r1599969.fit
+OBS TYPE:  FLAT
+EXP TIME:  24.01
+--------------------
+r1599970.fit
+OBS TYPE:  FLAT
+EXP TIME:  20.01
+--------------------
+r1599971.fit
+OBS TYPE:  FLAT
+EXP TIME:  18.01
+--------------------
+r1599972.fit
+OBS TYPE:  FLAT
+EXP TIME:  15.01
+--------------------
+r1599973.fit
+OBS TYPE:  FLAT
+EXP TIME:  10.01
+--------------------
+r1599974.fit
+OBS TYPE:  FLAT
+EXP TIME:  9.01
+--------------------
+r1599975.fit
+OBS TYPE:  FLAT
+EXP TIME:  7.01
+--------------------
+r1599976.fit
+OBS TYPE:  FLAT
+EXP TIME:  6.01
+--------------------
+r1599977.fit
+OBS TYPE:  FLAT
+EXP TIME:  4.01
+--------------------
+r1599978.fit
+OBS TYPE:  FLAT
+EXP TIME:  3.01
+--------------------
+r1599979.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599980.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599981.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599982.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599983.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599984.fit
+OBS TYPE:  FLAT
+EXP TIME:  4.01
+--------------------
+r1599985.fit
+OBS TYPE:  FLAT
+EXP TIME:  3.01
+--------------------
+r1599986.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599987.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599988.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599989.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599990.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599991.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599992.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599993.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1599994.fit
+OBS TYPE:  FLAT
+EXP TIME:  2.01
+--------------------
+r1597643.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597644.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597645.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597646.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597647.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597648.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597649.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597650.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597651.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597652.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597653.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597654.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597655.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597656.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597657.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597658.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597659.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597660.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597661.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597662.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1597663.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1599995.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1599996.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1599997.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1599998.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1599999.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600000.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600001.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600002.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600003.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600004.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600005.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600006.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600007.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600008.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600009.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600010.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600011.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600012.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600013.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600014.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600015.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600016.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600017.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600018.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600019.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1600020.fit
+OBS TYPE:  BIAS
+EXP TIME:  0.0
+--------------------
+r1599579.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599580.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599581.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599582.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599583.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599584.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599585.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599586.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599587.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599588.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599589.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599590.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599591.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599592.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599593.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599594.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599595.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599596.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599597.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599598.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599599.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599600.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599601.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599602.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599603.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599604.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599605.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599606.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599607.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599608.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599609.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599610.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599611.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599612.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599613.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599614.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599615.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599616.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599617.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599618.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599619.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599620.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599621.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599622.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599623.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599624.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599625.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599626.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599627.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599628.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599629.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599630.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599631.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599632.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599633.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599634.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599635.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599636.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599637.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599638.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599639.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599640.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599641.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599642.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599643.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599644.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599645.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599646.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599647.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599648.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599649.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599650.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599651.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599652.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599653.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599654.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599655.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599656.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599657.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599658.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599659.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599660.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599661.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599662.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599663.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599664.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599665.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599666.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599667.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599668.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599669.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599670.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599671.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599672.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599673.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599674.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599675.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599676.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599677.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599678.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599679.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599680.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599681.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599682.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599683.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599684.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599685.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599686.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599687.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599688.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599689.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599690.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599691.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599692.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599693.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599694.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599695.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599696.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599697.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599698.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599699.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599700.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599701.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599702.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599703.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599704.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599705.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599706.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599707.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599708.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599709.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599710.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599711.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599712.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599713.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599714.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599715.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599716.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599717.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599718.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599719.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599720.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599721.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599722.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599723.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599724.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599725.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599726.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599727.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599728.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599729.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599730.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599731.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599732.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599733.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599734.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599735.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599736.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599737.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599738.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599739.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599740.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599741.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599742.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599743.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599744.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599745.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599746.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599747.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599748.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599749.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599750.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599751.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599752.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599753.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599754.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599755.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599756.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599757.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599758.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599759.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599760.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599761.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599762.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599763.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599764.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599765.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599766.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599767.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599768.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599769.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599770.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599771.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599772.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599773.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599774.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599775.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599776.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599777.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599778.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599779.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599780.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599781.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599782.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599783.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599784.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599785.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599786.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599787.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599788.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599789.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599790.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599791.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599792.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599793.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599794.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599795.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599796.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599797.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599798.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599799.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599800.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599801.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599802.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599803.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599804.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599805.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599806.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599807.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599808.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599809.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599810.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599811.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599812.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599813.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599814.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599815.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599816.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599817.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599818.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599819.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599820.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599821.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599822.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599823.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599824.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599825.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599826.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599827.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599828.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599829.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599830.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599831.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599832.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599833.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599834.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599835.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599836.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599837.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599838.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599839.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599840.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599841.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599842.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599843.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599844.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599845.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599846.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599847.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599848.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599849.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599850.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599851.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599852.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599853.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599854.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599855.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599856.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599857.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599858.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599859.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599860.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599861.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599862.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599863.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599864.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599865.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599866.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599867.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599868.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599869.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599870.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599871.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599872.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599873.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599874.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599875.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599876.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599877.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599878.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599879.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599880.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599881.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599882.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599883.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599884.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599885.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599886.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599887.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599888.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599889.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599890.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599891.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599892.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599893.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599894.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599895.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599896.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599897.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599898.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599899.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599900.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599901.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599902.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599903.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599904.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599905.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599906.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599907.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599908.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599909.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599910.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599911.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599912.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599913.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599914.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599915.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599916.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599917.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599918.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599919.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599920.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599921.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599922.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599923.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599924.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599925.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599926.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599927.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599928.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599929.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599930.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599931.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599932.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599933.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599934.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599935.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599936.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599937.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599938.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599939.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599940.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599941.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
+--------------------
+r1599942.fit
+OBS TYPE:  TARGET
+EXP TIME:  30.01
