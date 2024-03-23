@@ -1,0 +1,162 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{flux_uncertainty}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7df4ba3d662317df2aa756a951a325af}{%
+           family={Masci},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {California Institute of Technology}%
+      }
+      \strng{namehash}{7df4ba3d662317df2aa756a951a325af}
+      \strng{fullhash}{7df4ba3d662317df2aa756a951a325af}
+      \strng{bibnamehash}{7df4ba3d662317df2aa756a951a325af}
+      \strng{authorbibnamehash}{7df4ba3d662317df2aa756a951a325af}
+      \strng{authornamehash}{7df4ba3d662317df2aa756a951a325af}
+      \strng{authorfullhash}{7df4ba3d662317df2aa756a951a325af}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Flux-Uncertainty from Aperture Photometry}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb https://wise2.ipac.caltech.edu/staff/fmasci/ApPhotUncert.pdf
+      \endverb
+      \verb{url}
+      \verb https://wise2.ipac.caltech.edu/staff/fmasci/ApPhotUncert.pdf
+      \endverb
+    \endentry
+    \entry{exo_encyclopedia}{online}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Exoplanet Encyclopedia}
+      \verb{urlraw}
+      \verb https://exoplanet.eu/home/
+      \endverb
+      \verb{url}
+      \verb https://exoplanet.eu/home/
+      \endverb
+    \endentry
+    \entry{limb2}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3d72ea27b6b15bf5333ddb84954b9bad}{%
+           family={Mandel},
+           familyi={M\bibinitperiod},
+           given={Kaisey},
+           giveni={K\bibinitperiod}}}%
+        {{hash=88d62f92900fbe179a2b57965c7dc418}{%
+           family={Agol},
+           familyi={A\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{7678f54e10e8de257cb36a3885c32fb6}
+      \strng{fullhash}{7678f54e10e8de257cb36a3885c32fb6}
+      \strng{bibnamehash}{7678f54e10e8de257cb36a3885c32fb6}
+      \strng{authorbibnamehash}{7678f54e10e8de257cb36a3885c32fb6}
+      \strng{authornamehash}{7678f54e10e8de257cb36a3885c32fb6}
+      \strng{authorfullhash}{7678f54e10e8de257cb36a3885c32fb6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analytic Lightcurves for Planetary Transit Searches}
+      \field{year}{2002}
+    \endentry
+    \entry{limb1}{article}{}
+      \name{author}{5}{}{%
+        {{hash=00370a97449c1aa4c254e44c5bc02a8b}{%
+           family={Carter},
+           familyi={C\bibinitperiod},
+           given={Joshua\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8f8e0e44b57a7a2a04e43f08627e150e}{%
+           family={Yee},
+           familyi={Y\bibinitperiod},
+           given={Jennifer\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=1a191a5e1e4551358bdc982f9a202391}{%
+           family={Eastman},
+           familyi={E\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f808402b669e942531c516072b1070ec}{%
+           family={Gaudi},
+           familyi={G\bibinitperiod},
+           given={B.\bibnamedelimi Scott},
+           giveni={B\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=db4b895e84adc8bf0033668683581c5c}{%
+           family={Winn1},
+           familyi={W\bibinitperiod},
+           given={Joshua\bibnamedelima N.},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d71d33355c54f135bbfdff739f0f201}
+      \strng{fullhash}{0650cf4de18ab72fff16fb014aff9b4b}
+      \strng{bibnamehash}{7d71d33355c54f135bbfdff739f0f201}
+      \strng{authorbibnamehash}{7d71d33355c54f135bbfdff739f0f201}
+      \strng{authornamehash}{7d71d33355c54f135bbfdff739f0f201}
+      \strng{authorfullhash}{0650cf4de18ab72fff16fb014aff9b4b}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analytic Approximations for Transit Light Curve Observables, Uncertainties, and Covariances}
+      \field{year}{2008}
+    \endentry
+    \entry{claret}{online}{}
+      \name{author}{1}{}{%
+        {{hash=145f0e60d8feac1b08e055f6d0c6f91e}{%
+           family={Claret},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Astronomy \& Astrophysics}%
+      }
+      \strng{namehash}{145f0e60d8feac1b08e055f6d0c6f91e}
+      \strng{fullhash}{145f0e60d8feac1b08e055f6d0c6f91e}
+      \strng{bibnamehash}{145f0e60d8feac1b08e055f6d0c6f91e}
+      \strng{authorbibnamehash}{145f0e60d8feac1b08e055f6d0c6f91e}
+      \strng{authornamehash}{145f0e60d8feac1b08e055f6d0c6f91e}
+      \strng{authorfullhash}{145f0e60d8feac1b08e055f6d0c6f91e}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A new non-linear limb-darkening law for LTE stellar atmosphere models III}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb https://www.aanda.org/articles/aa/abs/2004/48/aa1673/aa1673.html
+      \endverb
+      \verb{url}
+      \verb https://www.aanda.org/articles/aa/abs/2004/48/aa1673/aa1673.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
