@@ -10,6 +10,7 @@
 \usepackage{mathtools}
 \usepackage{authblk}
 \usepackage{hyperref}
+\usepackage{gensymb}
 
 \hypersetup{
     colorlinks,
@@ -41,11 +42,11 @@
 
 \section{Data}
 The data for this lab was obtained from the NASA JPL Horizons database, as well as the JPL Small-Body database. Three epochs 
-for the asteroid 24 Proserpina were obtained in order to determine the Keplerian orbital elements, as well as a fourth epoch to verify 
+for the asteroid 26 Proserpina were obtained in order to determine the Keplerian orbital elements, as well as a fourth epoch to verify 
 the predictions of the model. While the original intention was to use the data measured during Lab 4, it was found that the measurements were not 
 accurate enough to model the orbit of the asteroid accurately. The data obtained from the JPL Horizons database aligns with the exact Julian Dates as 
 the measurements taken during Lab 4, and are displayed in Table \ref{tab:data}.
-\begin{figure}[H]
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
     \hline 
@@ -60,40 +61,277 @@ the measurements taken during Lab 4, and are displayed in Table \ref{tab:data}.
     2455952.711863426 & 80.508761066 & 26.918595843 & 0.006 & 0.002 \\
     \hline
 \end{tabular}
-    \caption{The data obtained from the Nasa JPL Horizons Database for 24 Proserpina.}
+    \caption{The data obtained from the Nasa JPL Horizons Database for 26 Proserpina.}
     \label{tab:data}
-\end{figure}
-Additionally, the following orbital elements were obtained from the JPL Small-Body Database for 24 Proserpina, to verify 
+\end{table}
+Additionally, the following orbital elements were obtained from the JPL Small-Body Database for 26 Proserpina in Table \ref{tab:elements_nasa}, to verify 
 the accuracy of the model. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+    \hline 
+    \textbf{Orbital Element} & \textbf{Value} & \textbf{$1-\sigma$ Uncertainty}\\
+    \hline
+    $e$ & $0.08893723261559516$ & $\pm 1.8448E-9$ \\
+    \hline
+    $a$ [AU] & $2.655445563385344$ & $\pm 2.0901E-9$\\
+    \hline
+    $i$ [deg] & $3.562779465659724$ & $\pm 1.5355E-7$ \\
+    \hline
+    $\Omega$ [deg] & $45.76223482483094$ & $\pm 2.2544E-6$ \\
+    \hline
+    $\omega$ [deg] & 193.9891474700957 & $\pm 2.4894E-6$\\
+    \hline
+    $\tau$ [JD] & 2459718.802520376858 & $\pm 4.7108E-6$ \\
+    \hline   
+\end{tabular}
+    \caption{The orbital elements for 26 Proserpina obtained from the JPL Small-Body Database for verification purposes.}
+    \label{tab:elements_nasa}
+\end{table}
 
 
 \section{Methodology}
 All of the following steps were also performed on the asteroid Ceres, and verified with the data in the lab manual to be correct. I will only be outlining the 
-process for 24 Proserpina here. 
-\subsection{Conversion from Celestial to Cartesian Equuatorial Coordinates}
+process for 26 Proserpina here. 
+\subsection{Conversion from Celestial to Cartesian Equatorial Coordinates}
 
 The first step in the process is to obtain the unit vector pointing from the observer on Earth to the asteroid, $\hat{s}$. To do this, the celestial coordinates of the 
 asteroid are first converted into cartesian equatorial coordinates using Equation \ref{eq:cartesian}, where $\alpha$ is the celestial right ascension measurement, and 
 $\delta$ is the declination measurement.
+
 \begin{equation}
     \begin{aligned}
+        \label{eq:cartesian}
         x &= \cos(\alpha)\cos(\delta) \\
         y &= \sin(\alpha)\cos(\delta) \\
         z &= \sin(\delta)
     \end{aligned}
-    \label{eq:cartesian}
 \end{equation}
 
+\noindent
+Next, the unit vector $\hat{s}$ is able to be obtained by converting the newly found coordinates into the ecliptic frame, 
+using Equation \ref{eq:ecliptic}, and $\epsilon = 23.43929111 \degree$.
+
+\begin{equation}
+    \label{eq:ecliptic}
+    \begin{aligned}
+        x &= x_{eq} \\
+        y &= y_{eq}\cos(\epsilon) + z_{eq}\sin(\epsilon) \\
+        z &= -y_{eq}\sin(\epsilon) + z_{eq}\cos(\epsilon)
+    \end{aligned}
+\end{equation}
+
+\noindent
+Using transformations \ref{eq:cartesian} and \ref{eq:ecliptic}, the unit vector $\hat{s}$ is found for each epoch, with the results displayed in Table \ref{tab:unit_vector}. These 
+quantities are currently dimensionless, as they only represent the direction of the asteroid with respect to an observer on Earth. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+    \hline 
+    \textbf{Epoch} & \textbf{$\hat{s}_{x}$} & \textbf{$\hat{s}_{y}$} & \textbf{$\hat{s}_{z}$} \\
+    \hline
+    1 & 0.13589024 & 0.9885167 & 0.06609521 \\
+    \hline
+    2 & 0.13806332 & 0.9882207 & 0.06601792 \\
+    \hline
+    3 & 0.14212218 & 0.98765705 & 0.06583944 \\
+    \hline
+    4 & 0.14703034 & 0.98695803 & 0.06554333 \\
+    \hline
+\end{tabular}
+    \caption{The unit vector $\hat{s}$ for 26 Proserpina at each measurement epoch.}
+    \label{tab:unit_vector}
+\end{table}
+
+\subsection{Finding time derivatives $\dot{\hat{s}}$ and $\ddot{\hat{s}}$}
+
+Now that we have the direction of the asteroid at each measured epoch, we are able to find the time derivative of $\hat{s}$ through a 
+Taylor series expansion. This will require the use of three measured epochs, so it is only possible to find the time derivative at a single epoch if we have 4 measurements.
+The Taylor series expansion is shown in Equation \ref{eq:taylor}, where $s_n$ are the unit vectors at the $n$'th epoch, $\tau_1 = t_2 - t_1$, 
+and $\tau_3 = t_3 - t_2$.
+
+\begin{equation}
+    \begin{aligned}
+        s_1 = s_2 - \tau_1\dot{s_2} + \frac{1}{2}\tau_1^2\ddot{s_2} \\
+        s_3 = s_2 + \tau_3\dot{s_2} + \frac{1}{2}\tau_3^2\ddot{s_2} \\
+        \dot{s_2} = \frac{\tau_3(s_2-s_1)}{\tau_1(\tau_1 + \tau_3)} + \frac{\tau_1(s_3-s_2)}{\tau_3(\tau_1 + \tau_3)} \\
+        \ddot{s_2} = \frac{2(s_3-s_2)}{\tau_3(\tau_1 + \tau_3)} - \frac{2(s_2-s_1)}{\tau_1(\tau_1 + \tau_3)}
+    \end{aligned}
+    \label{eq:taylor}
+\end{equation}
+
+\noindent
+Using the defined Taylor expansion, $\dot{\hat{s}}$ and $\ddot{\hat{s}}$ are displayed in Equation \ref{eq:dots} for the second epoch.
+
+\begin{equation}
+\begin{aligned}
+\dot{\hat{s}} =
+\begin{pmatrix}
+    2.10095687 \times 10^{-03}  \\
+    -2.87924325 \times 10^{-04} \\
+    -8.02641200 \times 10^{-05} \\
+\end{pmatrix}
+\slash \text{Julian Day}
+\\
+\\
+\ddot{\hat{s}} = 
+\begin{pmatrix}
+    -1.08290903 \times 10^{-04} \\
+    1.12790162 \times 10^{-05} \\
+    -7.12670452 \times 10^{-06} \\
+\end{pmatrix}
+\slash (\text{Julian Day})^2
+\end{aligned}
+\label{eq:dots}
+\end{equation}
+
+\subsection{Finding $\rho$ and $\vec{r}$}
 
 
+Now that we have the direction and rate of change of the direction of the asteroid with respect to Earth, we now need to find the magnitude of its distance. I will define this magnitude
+as $\rho$, which means that the vector pointing from Earth to the asteroid is $\rho\hat{s}$. In order to find $\rho$, we need to define a few additional quantities first. Let $\vec{R}$ be the vector pointing 
+from the Sun to the Earth at the time of the observation, and $\vec{r}$ be the vector pointing from the Sun to the asteroid. $\vec{r}$ is a quantity we are able to solve for, but $\vec{R}$ must be taken from 
+an external source. Using JPL Horizons, $\vec{R}$ is found for the 4 epochs and shown in Table \ref{tab:R}.
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+    \hline 
+    \textbf{Epoch} & \textbf{$\vec{R}_{x}$ [AU]} & \textbf{$\vec{R}_{y}$ [AU]} & \textbf{$\vec{R}_{z}$ [AU]} \\
+    \hline
+    1 & $-4.839943788688217 \times 10^{-01}$ & $8.567315077911066 \times 10^{-01}$ & $-2.430059010880054 \times 10^{-05}$ \\
+    \hline
+    2 & -$4.993079108676164 \times 10^{-01}$ & $8.480006311211998 \times 10^{-01}$ & $-2.466818936373878 \times 10^{-05}$ \\
+    \hline
+    3 & $-5.297936568478157 \times 10^{-01}$ & $8.295212676726603 \times 10^{-01}$ & $-2.517397903282655 \times 10^{-05}$ \\
+    \hline
+    4 & $-5.712949145475025 \times 10^{-01}$ & $8.018594933188263 \times 10^{-01}$ & $-2.501185296539947 \times 10^{-05}$ \\
+    \hline
+\end{tabular}
+\caption{The vector $\vec{R}$ for 26 Proserpina at each epoch.}
+\label{tab:R}
+\end{table}
 
+Unfortunately, solving for $\rho$ is not as simple as just plugging in formulas like the previous sections. The method used to solve for $\rho$ is an iterative process, where an initial guess for $\vec{r}$ is made in 
+Equation \ref{eq:rho_solve} taken from the lab manual, and then incremented until the equation converges to a (reasonable) value. The code used to find $\rho$ is available for viewing in the appendix. In Equation \ref{eq:rho_solve},
+$k = \sqrt{GM_{\odot}} \approx  0.017202098950000 [\text{AU}^{3/2} \text{days}^{-1}]$
+
+\begin{equation}
+    \label{eq:rho_solve}
+    \begin{aligned}
+        \rho = k^2(\frac{1}{R^3} - \frac{1}{r^3})\frac{\dot{\hat{s}} \cdot (\vec{R} \times \hat{s})}{\dot{\hat{s}} \cdot (\ddot{\hat{s}} \times \hat{s})}
+    \end{aligned}
+\end{equation}
+
+Also from the lab manual, we have an explicit vector formula for $\vec{r}$, which is displayed as Equation \ref{r:solve}. This allows the vector components of $\vec{r}$ to be found 
+using the value of the solved $\rho$ along with the other quantities we have found so far. 
+
+\begin{equation}
+    \label{r:solve}
+    \begin{aligned}
+        \vec{r} = \vec{R} + \rho\hat{s}
+    \end{aligned}
+\end{equation}
+
+\noindent
+The results of applying this iterative method to Equations \ref{eq:rho_solve} and \ref{r:solve} are displayed in Table \ref{tab:rho_r} for Epoch 2.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+    \hline 
+    \textbf{Quantity} & \textbf{Value} \\
+    \hline
+    $\rho$ [AU] & $2.002035489549954$ \\
+    \hline
+    $\vec{r}_{x}$ [AU] & $-0.22290024$ \\
+    \hline
+    $\vec{r}_{y}$ [AU] & $2.82645354$ \\
+    \hline
+    $\vec{r}_{z}$ [AU] & $0.13214555$ \\
+    \hline
+    $||\vec{r}||$ [AU] & $2.8383069959020517$ \\
+    \hline
+\end{tabular}
+    \caption{The distance $\rho$ and vector $\vec{r}$ for 26 Proserpina at the second epoch.}
+    \label{tab:rho_r}
+\end{table}
+
+\subsection{Finding $\dot{\rho}$ and $\vec{\dot{r}}$}
+
+Our next step is to figure out how the distance $\rho$ between the asteroid and Earth is changing over time, as well as how the vector $\vec{r}$ pointing from the Sun to the asteroid is changing.
+From the lab manual, we have these two expressions for the time derivatives of these quantities shown as Equation \ref{eq:rho_r_dot}. These are derived by differentiating the expressions in the previous section
+with respect to time.
+
+\begin{equation}
+    \label{eq:rho_r_dot}
+    \begin{aligned}
+        \dot{\rho} = \frac{k^2}{2}(\frac{1}{R^3} - \frac{1}{r^3})\frac{\ddot{s} \cdot (\vec{R} \times \hat{s})}{\ddot{\hat{s}} \cdot (\dot{\hat{s}} \times \hat{s})}  \\    
+        \dot{\vec{r}} = \dot{\vec{R}} + \dot{\rho}\hat{s} + \rho\dot{\hat{s}}
+    \end{aligned}
+\end{equation}
+
+\noindent
+Based on these derivatives, we already have everything we need to find $\dot{\rho}$ and $\dot{\vec{r}}$, except for the time derivative of $\vec{R}$. This is pulled from 
+the JPL Horizons database, and is displayed in Table \ref{tab:R_dot} for all measured epochs. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+    \hline 
+    \textbf{Epoch} & \textbf{$\dot{\vec{R}}_{x}$ [AU]} & \textbf{$\dot{\vec{R}}_{y}$ [AU]} & \textbf{$\dot{\vec{R}}_{z}$ [AU]} \\
+    \hline
+    1 & $-1.526643949321232 \times 10^{-02}$ & $-8.525858896020743 \times 10^{-03}$ & $-3.855835353970162 \times 10^{-07}$ \\
+    \hline
+    2 & $-1.511257153420666 \times 10^{-02}$ & $-8.794493842540710 \times 10^{-03}$ & $-3.374110866457986 \times 10^{-07}$ \\
+    \hline
+    3 & $-1.478571027653773 \times 10^{-02}$ & $-9.328745251113220 \times 10^{-03}$ & $-1.391122123137612 \times 10^{-07}$ \\
+    \hline
+    4 & $-1.429468504521881 \times 10^{-02}$ & $-1.005377067836366 \times 10^{-02}$ & $2.646232556130592 \times 10^{-07}$ \\
+    \hline
+\end{tabular}
+    \caption{The time derivative of the vector $\vec{R}$ for 26 Proserpina at each epoch.}
+    \label{tab:R_dot}
+\end{table}
+
+By first solving for $\dot{\rho}$ using the first equation and then plugging it into the second, we are able to find both quantities which are 
+displayed in Table \ref{tab:rho_r_dot} for the second epoch.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+    \hline 
+    \textbf{Quantity} & \textbf{Value} \\
+    \hline
+    $\dot{\rho}$ [AU/day] & $0.00788279914395846$ \\
+    \hline
+    $\dot{\vec{r}}_{x}$ [AU/day] & $-0.00981806$ \\
+    \hline
+    $\dot{\vec{r}}_{y}$ [AU/day] & $-0.00158098$ \\
+    \hline
+    $\dot{\vec{r}}_{z}$ [AU/day] & $0.00035938$ \\
+    \hline
+    $||\dot{\vec{r}}||$ [AU/day] & $0.00995102410217234$ \\
+    \hline
+\end{tabular}
+    \caption{The time derivative of the distance $\rho$ and vector $\vec{r}$ for 26 Proserpina at the second epoch.}
+    \label{tab:rho_r_dot}
+\end{table}
+
+With all the prerequisite quantities now found, the Keplerian orbital elements can now be determined.
 
 \section{Analysis}
+\subsection{Comparison with NASA JPL Database}
 
 \section{Results}
+\subsection{Orbit of 26 Proserpina}
+\subsection{Prediction for the 4th Epoch}
 
 \section{Error Analysis}
+\section{Monte Carlo Simulation}
+
 
 \section{Discussion}
 
