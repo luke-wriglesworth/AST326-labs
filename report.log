@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.4.2)  9 APR 2024 01:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.4.2)  9 APR 2024 02:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -351,15 +351,15 @@ LaTeX Font Info:    ... okay on input line 27.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(28.90755pt, 556.4799pt, 28.90755pt)
-* v-part:(T,H,B)=(28.90755pt, 737.15489pt, 28.90755pt)
+* h-part:(L,W,R)=(61.42993pt, 491.43513pt, 61.42993pt)
+* v-part:(T,H,B)=(61.42993pt, 672.11012pt, 61.42993pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=556.4799pt
-* \textheight=737.15489pt
-* \oddsidemargin=-43.36244pt
-* \evensidemargin=-43.36244pt
-* \topmargin=-80.36244pt
+* \textwidth=491.43513pt
+* \textheight=672.11012pt
+* \oddsidemargin=-10.84006pt
+* \evensidemargin=-10.84006pt
+* \topmargin=-47.84006pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -408,25 +408,30 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./report.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (66.9903pt too wide) in paragraph at lines 50--63
+ [][] 
+ []
+
+[2] (./report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12211 strings out of 476076
- 193967 string characters out of 5793776
- 1929187 words of memory out of 5000000
- 34174 multiletter control sequences out of 15000+600000
- 560791 words of font info for 45 fonts, out of 8000000 for 9000
+ 12223 strings out of 476076
+ 194256 string characters out of 5793776
+ 1937187 words of memory out of 5000000
+ 34187 multiletter control sequences out of 15000+600000
+ 561553 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,5n,93p,629b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on report.pdf (2 pages, 72848 bytes).
+ 89i,9n,93p,871b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on report.pdf (2 pages, 109535 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[margin=.4in]{geometry}
+\usepackage[margin=.85in]{geometry}
 \usepackage{bookmark}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{float}
@@ -34,47 +34,66 @@
 
 \section{Introduction}
 
+
+
+
 \newpage
 
 \section{Data}
-
-
+The data for this lab was obtained from the NASA JPL Horizons database, as well as the JPL Small-Body database. Three epochs 
+for the asteroid 24 Proserpina were obtained in order to determine the Keplerian orbital elements, as well as a fourth epoch to verify 
+the predictions of the model. While the original intention was to use the data measured during Lab 4, it was found that the measurements were not 
+accurate enough to model the orbit of the asteroid accurately. The data obtained from the JPL Horizons database aligns with the exact Julian Dates as 
+the measurements taken during Lab 4, and are displayed in Table \ref{tab:data}.
+\begin{figure}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline 
+    \textbf{Julian Date} & \textbf{RA [deg]} & \textbf{Dec [deg]} & \textbf{Uncertainty (RA) [arcsecond]} & \textbf{Uncertainty (Dec) [arcsecond]} \\
+    \hline
+    2455946.811041667 & 81.228109163 & 26.991003853 & 0.006 & 0.002 \\
+    \hline
+    2455947.819178241 & 81.087672035 & 26.978866941 & 0.006 & 0.002 \\
+    \hline
+    2455949.858240741 & 80.825483064 & 26.953925011 & 0.006 & 0.002 \\
+    \hline
+    2455952.711863426 & 80.508761066 & 26.918595843 & 0.006 & 0.002 \\
+    \hline
+\end{tabular}
+    \caption{The data obtained from the Nasa JPL Horizons Database for 24 Proserpina.}
+    \label{tab:data}
+\end{figure}
+Additionally, the following orbital elements were obtained from the JPL Small-Body Database for 24 Proserpina, to verify 
+the accuracy of the model. 
 
 
 \section{Methodology}
+All of the following steps were also performed on the asteroid Ceres, and verified with the data in the lab manual to be correct. I will only be outlining the 
+process for 24 Proserpina here. 
+\subsection{Conversion from Celestial to Cartesian Equuatorial Coordinates}
 
-\subsection{Star Region Detection and Centroids}
-
-
-
-\subsection{Conversion to Standard Coordinates}
-
-
-
-\subsection{Cross-Matching with the USNO-B1 Catalog}
-
-
-
-\subsection{Plate Solution}
+The first step in the process is to obtain the unit vector pointing from the observer on Earth to the asteroid, $\hat{s}$. To do this, the celestial coordinates of the 
+asteroid are first converted into cartesian equatorial coordinates using Equation \ref{eq:cartesian}, where $\alpha$ is the celestial right ascension measurement, and 
+$\delta$ is the declination measurement.
+\begin{equation}
+    \begin{aligned}
+        x &= \cos(\alpha)\cos(\delta) \\
+        y &= \sin(\alpha)\cos(\delta) \\
+        z &= \sin(\delta)
+    \end{aligned}
+    \label{eq:cartesian}
+\end{equation}
 
 
 
 
-\subsection{Locating 26 Proserpina}
 
 
 \section{Analysis}
 
-\subsection{Proper Motion of 26 Proserpina}
+\section{Results}
 
-
-
-\subsection{Velocity of 26 Proserpina}
-
-
-
-\subsection{Error Propagation}
-
+\section{Error Analysis}
 
 \section{Discussion}
 

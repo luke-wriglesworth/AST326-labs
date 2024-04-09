@@ -1,14 +1,18 @@
 # Fdb version 4
-["pdflatex"] 1712640387.28386 "/home/luke/Documents/Course Content/University of Toronto/Year 3/AST326/AST326-labs/report.tex" "report.pdf" "report" 1712640387.68693 0
-  "/home/luke/Documents/Course Content/University of Toronto/Year 3/AST326/AST326-labs/report.tex" 1712640387.15076 1249 9d511f2086f82ad97982fa87aa6c5160 ""
+["pdflatex"] 1712644329.78524 "/home/luke/Documents/Course Content/University of Toronto/Year 3/AST326/AST326-labs/report.tex" "report.pdf" "report" 1712644330.1919 0
+  "/home/luke/Documents/Course Content/University of Toronto/Year 3/AST326/AST326-labs/report.tex" 1712644329.65411 3287 cc9a381aec5e5b83cc2933776253ff4f ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1711186958 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1711186958 1004 54797486969f23fa377b128694d548df ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1711186958 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1711186958 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm" 1711186958 1328 5442e22a7072966dbaf88ca900acf3f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1711186958 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1711186958 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1711186958 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1711186958 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1711186958 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb" 1711186958 32298 c6d25bb16d1eac01ebdc6d7084126a1e ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1711186958 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1711186958 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1711186958 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1711186958 32362 179c33bbf43f19adbb3825bb4e36e57a ""
@@ -78,8 +82,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1711186958 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1712092996.76197 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1712092994 7113023 56ac40c8b3cf4b2762e78692e247198e ""
-  "report.aux" 1712640387.64411 6266 c2d8ff9b24217642fd8ce3ad9cf4451d "pdflatex"
-  "report.tex" 1712640387.15076 1249 9d511f2086f82ad97982fa87aa6c5160 ""
+  "report.aux" 1712644330.14745 4187 20ead3278c4c486be3d245bba860b6f5 "pdflatex"
+  "report.tex" 1712644329.65411 3287 cc9a381aec5e5b83cc2933776253ff4f ""
   (generated)
   "report.aux"
   "report.log"
