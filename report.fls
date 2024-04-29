@@ -148,12 +148,12 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -166,8 +166,74 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT ./Lab 6/fig/mean_eccentric.png
+INPUT ./Lab 6/fig/mean_eccentric.png
+INPUT ./Lab 6/fig/mean_eccentric.png
+INPUT ./Lab 6/fig/mean_eccentric.png
+INPUT ./Lab 6/fig/mean_eccentric.png
+INPUT ./Lab 6/fig/distance.png
+INPUT ./Lab 6/fig/distance.png
+INPUT ./Lab 6/fig/distance.png
+INPUT ./Lab 6/fig/distance.png
+INPUT ./Lab 6/fig/distance.png
+INPUT ./Lab 6/fig/orbit.png
+INPUT ./Lab 6/fig/orbit.png
+INPUT ./Lab 6/fig/orbit.png
+INPUT ./Lab 6/fig/orbit.png
+INPUT ./Lab 6/fig/orbit.png
+INPUT ./Lab 6/fig/prediction.png
+INPUT ./Lab 6/fig/prediction.png
+INPUT ./Lab 6/fig/prediction.png
+INPUT ./Lab 6/fig/prediction.png
+INPUT ./Lab 6/fig/prediction.png
+INPUT ./Lab 6/fig/gauss.png
+INPUT ./Lab 6/fig/gauss.png
+INPUT ./Lab 6/fig/gauss.png
+INPUT ./Lab 6/fig/gauss.png
+INPUT ./Lab 6/fig/gauss.png
+INPUT ./Lab 6/fig/a_dist.png
+INPUT ./Lab 6/fig/a_dist.png
+INPUT ./Lab 6/fig/a_dist.png
+INPUT ./Lab 6/fig/a_dist.png
+INPUT ./Lab 6/fig/a_dist.png
+INPUT ./Lab 6/fig/sample.png
+INPUT ./Lab 6/fig/sample.png
+INPUT ./Lab 6/fig/sample.png
+INPUT ./Lab 6/fig/sample.png
+INPUT ./Lab 6/fig/sample.png
+INPUT ./Lab 6/fig/comparison.png
+INPUT ./Lab 6/fig/comparison.png
+INPUT ./Lab 6/fig/comparison.png
+INPUT ./Lab 6/fig/comparison.png
+INPUT ./Lab 6/fig/comparison.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./Lab 6/fig/e_mc.png
+INPUT ./Lab 6/fig/e_mc.png
+INPUT ./Lab 6/fig/e_mc.png
+INPUT ./Lab 6/fig/e_mc.png
+INPUT ./Lab 6/fig/e_mc.png
+INPUT ./Lab 6/fig/i_mc.png
+INPUT ./Lab 6/fig/i_mc.png
+INPUT ./Lab 6/fig/i_mc.png
+INPUT ./Lab 6/fig/i_mc.png
+INPUT ./Lab 6/fig/i_mc.png
+INPUT ./Lab 6/fig/long_mc.png
+INPUT ./Lab 6/fig/long_mc.png
+INPUT ./Lab 6/fig/long_mc.png
+INPUT ./Lab 6/fig/long_mc.png
+INPUT ./Lab 6/fig/long_mc.png
+INPUT ./Lab 6/fig/arg_mc.png
+INPUT ./Lab 6/fig/arg_mc.png
+INPUT ./Lab 6/fig/arg_mc.png
+INPUT ./Lab 6/fig/arg_mc.png
+INPUT ./Lab 6/fig/arg_mc.png
+INPUT ./Lab 6/fig/tau_mc.png
+INPUT ./Lab 6/fig/tau_mc.png
+INPUT ./Lab 6/fig/tau_mc.png
+INPUT ./Lab 6/fig/tau_mc.png
+INPUT ./Lab 6/fig/tau_mc.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT report.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
@@ -183,3 +249,4 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb
